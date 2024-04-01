@@ -1,0 +1,70 @@
+.news
+  &__link
+    @include flex-column
+    gap: 3rem
+    justify-content: flex-start
+    padding: 3rem
+    background: $white-color
+    transition: all 0.2s ease-in-out
+    border-radius: 4.8rem
+    border: 1px solid $beige-color
+
+    &:hover
+      text-decoration: none !important
+      background: $beige-color
+
+      .news__title
+        color: $mainFontColor
+      .news__description
+        color: $blackFontColor
+
+  &__img
+    height: 16.5rem
+    border-radius: 20px
+
+  &__content
+    @include flex-column
+    gap: 1.5rem
+
+  &__title
+    transition: all 0.2s ease-in-out
+    display: block
+    @include font-params(2rem, 600, $green-color)
+
+  &__description
+    transition: all 0.2s ease-in-out
+    display: block
+    @include font-params(1.4rem, 600, $gray-color)
+
+.pagination
+  @include flex-center-vert
+  justify-content: center
+  gap: 1rem
+
+  & > *
+    width: 4.2rem
+    height: 4.2rem
+    @include flex-center
+    border-radius: 5px
+
+  .current
+    border: 1px solid $beige-color
+    color: $green-color
+
+  .link
+    color: $blackFontColor
+    background: $beige-color
+
+    &:hover
+      text-decoration: none
+      color: $green-color
+
+  .points
+    &:hover
+      svg
+        color: $blackFontColor
+
+    svg
+      transition: all 0.2s ease-in-out
+      width: 3rem
+      color: #8B8B8B

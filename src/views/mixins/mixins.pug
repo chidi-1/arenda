@@ -1,0 +1,157 @@
+mixin product(title, src, imgType, available, price, deposit, video, added)
+    .product(class = available ? '' : 'disabled')
+        .product__img
+            picture
+                source(type='image/webp' srcset=(src + '.webp') + ' 1x,' + (src + '@2x.webp') + ' 2x')
+                source(type='image/' + imgType + ' ' srcset=(src + imgType) + ' 1x,' + (src + '@2x' + imgType) + ' 2x')
+                img(src=(src + imgType) + ' 1x,' + (src + '@2x.' + imgType) + ' 2x' alt=alt)
+
+        .product__params
+            span.product__name= title
+
+            ul.product__info
+                li.available
+                    span(class=available ? 'c-green' : 'c-red')= available ? 'В наличии' : 'Скоро появится'
+                    span.c-main=price + ' ₽/сутки'
+                li
+                    span Залог
+                    span=deposit + ' ₽'
+                li
+                    span Видеообзор:
+                    span=(video ? 'Есть' : 'Нет')
+
+        .product__buttons(class=added ? 'added' : '')
+            .amount
+                button().icon.icon-minus
+                    svg
+                        use(xlink:href='/public/img/sprite.svg#icon-minus')
+                input(type='text' name='' value='1')
+                button().icon.icon-plus
+                    svg
+                        use(xlink:href='/public/img/sprite.svg#icon-plus')
+
+            button.button.add Добавить в корзину
+
+            a(href='https://wa.me/номер_телефона?text=' + title).whatsapp
+                svg
+                    use(xlink:href='/public/img/sprite.svg#icon-whatsapp')
+
+mixin productSlider(title, src, imgType, available, price, deposit, video, added)
+    .swiper-slide
+        .product(class = available ? '' : 'disabled')
+            .product__img
+                picture
+                    source(type='image/webp' srcset=(src + '.webp') + ' 1x,' + (src + '@2x.webp') + ' 2x')
+                    source(type='image/' + imgType + ' ' srcset=(src + imgType) + ' 1x,' + (src + '@2x' + imgType) + ' 2x')
+                    img(src=(src + imgType) + ' 1x,' + (src + '@2x.' + imgType) + ' 2x' alt=alt)
+
+            .product__params
+                span.product__name= title
+
+                ul.product__info
+                    li.available
+                        span(class=available ? 'c-green' : 'c-red')= available ? 'В наличии' : 'Скоро появится'
+                        span.c-main=price + ' ₽/сутки'
+                    li
+                        span Залог
+                        span=deposit + ' ₽'
+                    li
+                        span Видеообзор:
+                        span=(video ? 'Есть' : 'Нет')
+
+            .product__buttons(class=added ? 'added' : '')
+                .amount
+                    button().icon.icon-minus
+                        svg
+                            use(xlink:href='/public/img/sprite.svg#icon-minus')
+                    input(type='text' name='' value='1')
+                    button().icon.icon-plus
+                        svg
+                            use(xlink:href='/public/img/sprite.svg#icon-plus')
+
+                button.button.add Добавить в корзину
+
+                a(href='https://wa.me/номер_телефона?text=' + title).whatsapp
+                    svg
+                        use(xlink:href='/public/img/sprite.svg#icon-whatsapp')
+
+mixin purchase(title, src, imgType, available, onlybuing, price, deposit)
+    div(class = available ? '' : 'disabled').purchase
+        .purchase__data
+            .purchase__img
+                picture
+                    source(type='image/webp' srcset=(src + '.webp') + ' 1x,' + (src + '@2x.webp') + ' 2x')
+                    source(type='image/' + imgType + ' ' srcset=(src + imgType) + ' 1x,' + (src + '@2x' + imgType) + ' 2x')
+                    img(src=(src + imgType) + ' 1x,' + (src + '@2x.' + imgType) + ' 2x' alt=alt)
+
+            .purchase__info
+                span.purchase__name=title
+
+                .purchase__params
+                    span(class=available ? 'c-green' : 'c-red').purchase__available= available ? 'В наличии' : 'Скоро появится'
+                    if(onlybuing)
+                        span.purchase__onlybuing Этот товар можно только купить
+
+        .purchase__buttons
+            .amount
+                button(type='button').icon.icon-minus
+                    svg
+                        use(xlink:href='/public/img/sprite.svg#icon-minus')
+                input(type='text' name='' value='1')
+                button(type='button').icon.icon-plus
+                    svg
+                        use(xlink:href='/public/img/sprite.svg#icon-plus')
+
+            .purchase__cost
+                span.purchase__price=price
+                if(deposit)
+                    span.purchase__deposit= 'Залог:' + deposit
+
+
+            button(type='button').purchase__remove
+                svg
+                    use(xlink:href='/public/img/sprite.svg#icon-trash')
+
+mixin purchasesm(title, src, imgType, available, onlybuing, price, deposit)
+    div(class = available ? '' : 'disabled').purchase
+        .purchase__data
+            .purchase__img
+                picture
+                    source(type='image/webp' srcset=(src + '.webp') + ' 1x,' + (src + '@2x.webp') + ' 2x')
+                    source(type='image/' + imgType + ' ' srcset=(src + imgType) + ' 1x,' + (src + '@2x' + imgType) + ' 2x')
+                    img(src=(src + imgType) + ' 1x,' + (src + '@2x.' + imgType) + ' 2x' alt=alt)
+
+            .purchase__info
+                span.purchase__name=title
+
+                .purchase__params
+                    span(class=available ? 'c-green' : 'c-red').purchase__available= available ? 'В наличии' : 'Скоро появится'
+                    if(onlybuing)
+                        span.purchase__onlybuing Этот товар можно только купить
+
+        .purchase__buttons
+            .amount
+                button(type='button').icon.icon-minus
+                    svg
+                        use(xlink:href='/public/img/sprite.svg#icon-minus')
+                input(type='text' name='' value='1')
+                button(type='button').icon.icon-plus
+                    svg
+                        use(xlink:href='/public/img/sprite.svg#icon-plus')
+
+            .purchase__cost
+                span.purchase__price=price
+                if(deposit)
+                    span.purchase__deposit= 'Залог:' + deposit
+
+mixin category(src, imgType, type, assortment)
+    a(href='').category
+        .category__img
+            picture
+                source(type='image/webp' srcset=(src + '.webp') + ' 1x,' + (src + '@2x.webp') + ' 2x')
+                source(type='image/' + imgType + ' ' srcset=(src + imgType) + ' 1x,' + (src + '@2x' + imgType) + ' 2x')
+                img(src=(src + imgType) + ' 1x,' + (src + '@2x.' + imgType) + ' 2x' alt=alt)
+
+        .category__data
+            span.category__type= type
+            span.category__assortment= assortment

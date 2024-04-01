@@ -1,0 +1,95 @@
+input
+  font-size: 2.5rem
+
+  &::placeholder
+    font-size: inherit
+    color: rgba(0,0,0,0.4)
+
+  &:focus::placeholder
+    opacity: 0
+
+label.label-checkbox
+  @include flex-center-vert
+  flex-wrap: wrap
+  gap: 2rem
+  cursor: pointer
+
+  input
+    display: none
+
+    &:checked + .psevdocheckbox
+      background: url("/public/img/sprite.svg#icon-checkbox-view") no-repeat 50% 50%
+      background-size: 110% 110%
+
+  .psevdocheckbox
+    @include border(1px, 100%, $mainFontColor)
+    width: 2.5rem
+    height: 2.5rem
+    border-radius: 100%
+
+    @include mobile
+      width: 3rem
+      height: 3rem
+
+  span
+    font-size: 1.7rem
+    line-height: 2.5rem
+
+    @include mobile
+      font-size: 2rem
+
+.variant
+  @include flex-justify-horiz
+  align-items: center
+  @include border(1px, 20px, $white-color)
+  background: $white-color
+  padding: 3rem
+  width: 100%
+
+  @include mobile
+    @include flex-column
+    align-items: flex-start
+    gap: 2rem
+    border-width: 2px
+    padding: 3rem 2.8rem
+
+  &.variant-border
+    border-color: $beige-color
+
+  &__title
+    @include flex-center-vert
+    gap: 1rem
+
+    @include tablet
+      min-width: 20rem
+    @include mobile
+      gap: 1.5rem
+
+    svg
+      width: 3.6rem
+      height: 3.6rem
+      color: $green-color
+
+      @include mobile
+        width: 4.5rem
+        height: 4.5rem
+
+    span
+      color: $green-color
+      font-size: 20px
+
+      @include mobile
+        font-size: 2.5rem !important
+
+  &__text
+    display: inline-block
+    width: calc(100% - 18rem)
+    font-size: 14px
+    color: $gray-color
+
+    @include tablet
+      width: calc(100% - 21rem)
+    @include mobile
+      width: 100%
+      font-size: 1.8rem
+

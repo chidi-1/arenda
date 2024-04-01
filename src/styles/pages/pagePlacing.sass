@@ -1,0 +1,311 @@
+.order
+  @include flex-column
+  gap: 2rem
+
+  @include tablet
+    margin-bottom: 6rem
+
+  &-params
+    @include flex-justify-horiz
+    gap: 2rem
+
+    @include mobile
+      flex-direction: column
+      gap: 1.5rem
+      justify-content: flex-start
+
+    &__el
+      @include border(1px, 15px, $beige-color)
+      padding: 2rem 2rem
+      background: $white-color
+
+      @include mobile
+        width: 100% !important
+
+      &.date
+        width: calc(37% - 1rem)
+        @include flex-column
+        justify-content: center
+        gap: 2rem
+
+        svg
+          width: 4.4rem
+          height: 4.4rem
+
+        span.date__value
+          font-size: 2rem
+          color: $green-color
+
+      &.total
+        width: calc(63% - 1rem)
+        @include flex-justify-horiz
+        align-items: center
+
+        span.total
+          font-size: 2rem
+          color: $green-color
+
+        .total__data
+          padding: 0
+
+          .h3
+            margin: 0 0 1rem
+
+.composition
+  @include flex-column
+  gap: 3rem
+
+  .h3
+    margin: 0
+    color: $blackFontColor
+
+  .purchase
+    @include beige-block(2rem, 2rem)
+
+    @include tablet
+      flex-direction: row
+    @include mobile
+      flex-direction: column
+
+    .purchase__img
+      border: none
+      background: $white-color
+      border-radius: 12px
+      overflow: hidden
+
+      @include netbook
+        width: 120px
+      @include mobile
+        width: 90px
+
+    .purchase__data
+      width: calc(100% - 18rem)
+      max-width: calc(100% - 18rem)
+      @include flex-center-vert
+
+      @include tablet
+        width: calc(100% - 19rem)
+        max-width: calc(100% - 19rem)
+      @include mobile
+        width: 100%
+        max-width: 100%
+
+    .purchase__info
+      width: calc(100% - 18rem)
+      max-width: calc(100% - 18rem)
+      @include mobile
+        width: calc(100% - 1.5rem - 90px)
+        max-width: calc(100% - 1.5rem - 90px)
+
+      .purchase__onlybuing
+        padding: 0
+
+    .purchase__buttons
+      max-width: 16rem
+      @include flex-column
+      flex-direction: column-reverse
+      gap: 1.5rem
+      justify-content: center
+
+      @include mobile
+        flex-direction: row-reverse
+        justify-content: space-between
+        max-width: 100%
+
+      .purchase__deposit,
+      .purchase__price
+        text-align: center
+
+      .purchase__remove
+        display: none
+
+      .amount
+        @include mobile
+          text-align: center
+          justify-content: center
+
+        input
+          width: 6rem
+          height: 3rem
+          background: transparent
+          border-color: $white-color
+          font-size: 14px
+          color: $gray-color
+
+          @include mobile
+            width: 6rem
+            height: 5rem
+            text-align: center
+            @include border(1px, 5px, $white-color)
+            @include font-params(2rem, 600, $grayFontColor)
+
+        .icon,
+        .icon svg
+          width: 3rem
+          height: 3rem
+
+          @include mobile
+            width: 5rem
+            height: 5rem
+
+          &:hover
+            color: $green-color
+
+.placing
+  @include flex-column
+  gap: 6rem
+  @include mobile
+    gap: 3rem
+
+  &__step
+    @include flex-justify-horiz
+    gap: 2rem
+
+    @include mobile
+      display: block
+      position: relative
+
+    &__content
+      width: calc(100% - 4rem - 2rem)
+      @include flex-column
+      gap: 3rem
+
+      @include mobile
+        width: 100%
+
+      .h3
+        margin: 0
+
+        @include mobile
+          padding-left: 6rem
+
+      .mw-340,
+      .mw-495
+        @include flex-column
+        gap: 2rem
+
+      .infoblock
+        @include flex-center-vert
+        @include beige-block(1.4rem, 2rem)
+        gap: 1.3rem
+        border-radius: 20px
+
+        @include mobile
+          padding: 2rem 3rem
+
+        svg
+          width: 2.4rem
+          height: 2.4rem
+
+          @include mobile
+            width: 3rem
+            height: 3rem
+
+        span
+          @include font-params(1.3rem,400, $blackFontColor)
+          width: calc(100% - 2.4rem - 1.3rem)
+
+          @include mobile
+            font-size: 1.8rem
+            width: calc(100% - 5rem)
+
+      .input
+        @include border(1px, 20px, $beige-color)
+        padding-left: 3rem
+        height: 6rem
+        font-size: 1.6rem
+
+        @include mobile
+          height: 8rem
+
+      .delivery
+        background: transparent
+        padding: 0
+        @include flex-column
+        gap: 1rem
+
+      .payment
+        @include flex-center-vert
+        gap: 1.5rem
+
+        .label-checkbox
+          input:checked + .payment-type
+            cursor: default
+            border-color: $mainFontColor
+            background: $beige-color
+
+            svg,
+            span
+              color: $green-color
+
+
+        .payment-type
+          @include flex-center
+          @include border(1px, 20px, $beige-color)
+          padding: 1.5rem 2.5rem
+          gap: .8rem
+          cursor: pointer
+
+          svg
+            width: 2.2rem
+            height: 2.2rem
+            color: $mainFontColor
+
+          span
+            @include font-params(1.6rem, 600, $gray-color)
+
+            @include mobile
+              font-size: 2rem
+
+  &__number
+    width: 4rem
+    height: 4rem
+
+    @include mobile
+      position: absolute
+      left: 0
+      top: -0.5rem
+
+    span
+      @include flex-center
+      width: 4rem
+      height: 4rem
+      @include border(1px, 100%, $green-color)
+      color: $blackFontColor
+
+  &__buttons
+    @include flex-justify-horiz
+    align-items: center
+
+    @include mobile
+      position: fixed
+      z-index: 30
+      left: 0
+      right: 0
+      bottom: 0
+      border: 2px solid $beige-color
+      border-radius: 30px
+      padding: 20px
+      background-color: rgba(255,255,255,0.3)
+      backdrop-filter: blur(5px)
+
+    .whatsapp
+      display: none
+
+      @include mobile
+        display: inline-flex
+
+      svg
+        width: 4.8rem
+        height: 4.8rem
+
+    .button
+      width: calc(100% - 4.8rem - 1rem)
+
+      @include mobile
+        border-radius: 20px
+        height: 43px
+        min-height: 43px
+
+
+

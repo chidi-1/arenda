@@ -1,0 +1,126 @@
+extends /views/layouts/layout.pug
+
+block vars
+    - var pageClass = 'index'
+
+block content
+    .container
+        section.banner
+            .banner__img
+                picture
+                    source(type='image/webp' srcset='/public/img/bg--banner.webp 1x, /public/img/bg--banner@2x.webp 2x')
+                    source(type='image/jpg' srcset='/public/img/bg--banner.jpg 1x, /public/img/bg--banner@2x.jpg 2x')
+                    img(srcset='/public/img/bg--banner.jpg 1x, /public/img/bg--banner@2x.jpg 2x' alt='Баннер')
+
+            .banner__content
+                h1.h1 Пункт проката туристического снаряжения
+
+                .row.row-2
+                    p.fs-25 Предлагаем в&nbsp;аренду широкий асортимент снаряжения для путешественников и&nbsp;отдыха на&nbsp;природе. Мы&nbsp;заботимся о&nbsp;качестве и&nbsp;чистоте каждой вещи, поэтому наш пункт проката имеет десятки постоянных клиентов.
+                    p.fs-25 Всегда в&nbsp;наличии сопутствующее кемпинговое снаряжение: котелки, стулья, столы, тенты, походные бани. Удобное расположение склада в&nbsp;г. Москве недлаеко от&nbsp;м. Печатники, м. Текстильщики и&nbsp;Третьего транспортного кольца.
+
+                .button-group
+                    a(href='').button.button-brown В каталог
+                    a(href='').button.button-brown Связаться
+
+        .infograf
+            .row.row-4
+                .infograf__el
+                    svg
+                        use(xlink:href='/public/img/sprite.svg#icon-warehouse')
+                    p Более 400 товаров на&nbsp;складе
+                .infograf__el
+                    svg
+                        use(xlink:href='/public/img/sprite.svg#icon-delivery')
+                    p Доставка в&nbsp;день обращения
+                .infograf__el
+                    svg
+                        use(xlink:href='/public/img/sprite.svg#icon-discount')
+                    p Скидки при долгой аренде
+                .infograf__el
+                    svg
+                        use(xlink:href='/public/img/sprite.svg#icon-yandex')
+                    p Мнение клиентов 4.9
+
+        section
+            h2.h2 Мы&nbsp;помогаем сделать отдых комфортным
+
+            .vantage
+                .row.row-3
+                    .vantage__el
+                        .vantage__icon
+                            svg()
+                                use(xlink:href='/public/img/sprite.svg#icon-quality')
+
+                        .vantage__content
+                            h3.h3 Качество и&nbsp;гигиена
+                            p Перед тем, как сдать снаряжение в&nbsp;аренду, будь&nbsp;то спальник или палатка, или туристический стол, мы&nbsp;тщательно проверяем его состояние, стираем, ремонтируем, если требуется. К&nbsp;каждому спальнику прилагается вкладыш, гарантирующий чистоту и&nbsp;комфорт.
+                    .vantage__el
+                        .vantage__icon
+                            svg()
+                                use(xlink:href='/public/img/sprite.svg#icon-users')
+
+                        .vantage__content
+                            h3.h3 Команда профессионалов
+                            p На&nbsp;все вопросы по&nbsp;аренде ответят опытные путешественники. Мы&nbsp;поможем с&nbsp;выбором, подберем подходящее снаряжение в&nbsp;зависимости от&nbsp;сезона, вида и&nbsp;цели отдыха, количества участников и&nbsp;других условий.
+                    .vantage__el
+                        .vantage__icon
+                            svg()
+                                use(xlink:href='/public/img/sprite.svg#icon-label')
+
+                        .vantage__content
+                            h3.h3 Скидки постоянным клиентам
+                            p Вы&nbsp;доверяете нам самое важное&nbsp;&mdash; комфорт отдыха, мы&nbsp;благодарим Вас за&nbsp;это и&nbsp;предлагаем удобную систему скидок на&nbsp;аренду снаряжения.
+
+        section
+            h2.h2 В&nbsp;нашем пунтке проката вы&nbsp;можете взять в&nbsp;аренду
+
+            .hire.tabs
+                .row.row-2
+                    div
+                        .tabs__content.active
+                            picture
+                                source(type='image/webp' srcset='/public/img/img--index-tab-1.webp 1x, /public/img/img--index-tab-1@2x.webp 2x')
+                                source(type='image/jpg' srcset='/public/img/img--index-tab-1.jpg 1x, /public/img/img--index-tab-1@2x.jpg 2x')
+                                img(srcset='/public/img/img--index-tab-1.jpg 1x, /public/img/img--index-tab-1@2x.jpg 2x' alt='Баннер')
+
+                        .tabs__content
+                            picture
+                                source(type='image/webp' srcset='/public/img/img--index-tab-2.webp 1x, /public/img/img--index-tab-2@2x.webp 2x')
+                                source(type='image/jpg' srcset='/public/img/img--index-tab-2.jpg 1x, /public/img/img--index-tab-2@2x.jpg 2x')
+                                img(srcset='/public/img/img--index-tab-2.jpg 1x, /public/img/img--index-tab-2@2x.jpg 2x' alt='Баннер')
+                            .tabs__content
+                            .tabs__content
+                            .tabs__content
+                            .tabs__content
+                            .tabs__content
+                            .tabs__content
+                            .tabs__content
+                            .tabs__content
+                            .tabs__content
+
+                    ul.tabs__caption
+                        li.active Палатки
+                        li Спальники
+                        li Рюкзаки
+                        li Кемпинговая мебель
+                        li Костравое оборудование
+                        li Газовое оборудование
+                        li Байдарки
+                        li Лодки с мотором
+                        li Сапборды
+                        li Внедорожные эндуро мотоциклы
+                        li Легковые прицепы
+
+                a(href='').button.button-sm.button-brown Смотреть еще
+
+        include ../views/components/contacts
+
+        section
+            article.border
+                p Таким образом, синтетическое тестирование создаёт необходимость включения в&nbsp;производственный план целого ряда внеочередных мероприятий с&nbsp;учётом комплекса форм воздействия. Ясность нашей позиции очевидна: убеждённость некоторых оппонентов играет определяющее значение для экспериментов, поражающих по&nbsp;своей масштабности и&nbsp;грандиозности. Кстати, базовые сценарии поведения пользователей будут призваны к&nbsp;ответу.
+                p С&nbsp;учётом сложившейся международной обстановки, социально-экономическое развитие играет важную роль в&nbsp;формировании своевременного выполнения сверхзадачи. Следует отметить, что новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в&nbsp;формировании стандартных подходов. Принимая во&nbsp;внимание показатели успешности, курс на&nbsp;социально-ориентированный национальный проект не&nbsp;оставляет шанса для вывода текущих активов. Но&nbsp;независимые государства являются только методом политического участия и&nbsp;описаны максимально подробно.
+                p Идейные соображения высшего порядка, а&nbsp;также реализация намеченных плановых заданий способствует подготовке и&nbsp;реализации существующих финансовых и&nbsp;административных условий. Как принято считать, явные признаки победы институционализации набирают популярность среди определенных слоев населения, а&nbsp;значит, должны быть в&nbsp;равной степени предоставлены сами себе. Равным образом, новая модель организационной деятельности прекрасно подходит для реализации существующих финансовых и&nbsp;административных условий.
+
+    script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>")
+

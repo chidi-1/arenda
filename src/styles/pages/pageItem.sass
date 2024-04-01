@@ -1,0 +1,301 @@
+.cart-empty
+  padding: 3rem 0 6rem
+  @include flex-column
+  align-items: center
+  justify-content: center
+  gap: 3rem
+
+  .h2
+    margin: 0
+    color: $green-color
+    text-align: center
+
+  .h3
+    text-align: center
+    margin: 0
+
+  .button
+    width: auto
+    min-width: 150px
+    display: inline-flex
+
+.item
+  .row
+    align-items: flex-start
+
+  &__slider
+    overflow: hidden
+    @include border(1px, 48px, $beige-color)
+    padding: 3rem
+    background: $white-color
+
+    .swiper-main
+      position: relative
+      margin-bottom: 5rem
+
+      .swiper-slide
+        @include flex-center
+        height: 33.5rem !important
+        @include mobile
+          height: 25.5rem !important
+
+        picture,
+        img
+          max-width: 100%
+          max-height: 100%
+
+      .swiper-button-prev,
+      .swiper-button-next
+        width: 64px
+        height: 64px
+        border-radius: 14px
+        background: $mainFontColor
+        color: $white-color
+
+        @include mobile
+          width: 30px
+          height: 30px
+          border-radius: 5px
+
+        &.swiper-button-disabled
+          opacity: 1
+          background: $beige-color
+          color: $mainFontColor
+
+        &:after
+          content: ''
+          width: 20px
+          height: 20px
+          border:  none
+          border-top: 2px solid currentColor
+          border-right: 2px solid currentColor
+          top: 50%
+          left: 50%
+          position: absolute
+
+          @include mobile
+            width: 15px
+            height: 15px
+
+      .swiper-button-prev
+        left: -1rem
+
+        &:after
+          transform: translate(-7px, -50%) rotate(-135deg)
+          @include mobile
+            transform: translate(-5px, -50%) rotate(-135deg)
+
+      .swiper-button-next
+        right: -1rem
+
+        &:after
+          transform: translate(-14px, -50%) rotate(45deg)
+          @include mobile
+            transform: translate(-10px, -50%) rotate(45deg)
+
+    .swiper-thumbnails-mobile-wrap
+      width: 100%
+      overflow: hidden
+
+    .swiper-thumbnails
+      @include mobile
+        width: calc(100% + 6rem)
+        max-width: calc(100% + 6rem)
+        margin-left: -3rem
+
+      .swiper-slide
+        cursor: pointer
+
+      .swiper-slide-thumb-active
+        @include border(1px, 5px, $beige-color)
+        padding: 5px
+        cursor: default
+
+    .swiper-slide
+      height: auto !important
+
+
+  &__content
+    @include flex-column
+    gap: 1.5rem
+
+    @include tablet
+      width: 100%
+    @include mobile
+      gap: 2.1rem
+
+    h2,
+    h3
+      margin: 0
+
+  &__data
+    @include flex-center-vert
+    gap: 1.5rem
+
+    @include mobile
+      margin-bottom: 2rem
+      font-size: 2rem
+
+    & > div
+      @include flex-center-vert
+      gap: .3rem
+
+  &__availabile
+    span
+      @include font-params(2rem, 600)
+
+  &__rent
+    @include flex-column
+    gap: 1rem
+    @include border(1px, 15px, $beige-color)
+    padding: 2rem
+    max-width: 340px
+    width: 100%
+
+    @include mobile
+      gap: 1.5rem
+
+    .h3
+      margin: 0
+
+    .days
+      @include flex-center-vert
+      gap: 1rem
+
+      span
+        @include font-params(1.5rem, 400)
+        @include beige-block(1rem, .5rem)
+        border-radius: 5px
+
+        @include mobile
+          padding: 1rem 2rem
+          font-size: 1.8rem
+
+    .deposit
+      color: $gray-color
+
+  &__params
+    @include flex-column
+    gap: 1.1rem
+
+    li
+      @include flex-justify-horiz
+      align-items: center
+      border-bottom: 1px solid $beige-color
+      padding-bottom: 0.3rem !important
+      min-height: 3.5rem
+
+      @include mobile
+        padding-bottom: 1.1rem !important
+
+      span
+        display: inline-block
+
+        @include mobile
+          font-size: 1.8rem
+
+        &.text
+          color: $gray-color
+          max-width: 66%
+
+        &.value
+          font-size: 1.4rem
+          line-height: 1.3
+          max-width: 33%
+
+          @include mobile
+            font-size: 1.8rem
+
+  &__buttons
+    @include flex-justify-horiz
+    gap: 2rem
+    align-items: center
+
+    .button
+      width: calc(100% - 2rem - 4.8rem)
+
+    .whatsapp
+      svg
+        color: $mainFontColor
+        width: 4.8rem
+        height: 4.8rem
+
+.item-about
+  .h3
+    margin: 0
+
+  .row
+    align-items: stretch
+
+    @include tablet
+      flex-direction: column-reverse
+      gap: 3rem
+
+  &__content
+    @include flex-column
+    gap: 4.5rem
+
+    @include tablet
+      gap: 2rem
+
+  &__text
+    @include flex-column
+    gap: 2rem
+    color: $blackFontColor
+
+    @include mobile
+      font-size: 1.8rem
+
+  &__video
+    position: relative
+    overflow: hidden
+    @include flex-center
+    border-radius: 4.8rem
+
+    @include tablet
+      width: 100%
+
+    .play
+      position: relative
+      z-index: 10
+      background: transparent
+      outline: none
+
+      @include tablet
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+
+      svg
+        width: 139px
+        height: 139px
+
+        @include mobile
+          width: 80px
+          height: 80px
+
+  &__img
+    position: absolute
+    z-index: 5
+    min-height: 100%
+    min-width: 100%
+    object-fit: cover
+    object-position: center
+
+    @include tablet
+      position: relative
+      height: 60vw
+
+    img
+      @include tablet
+        position: relative
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%)
+        width: 100%
+
+.feedback-wrap
+  max-width: 760px
+  height: 600px
+  overflow: hidden

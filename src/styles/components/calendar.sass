@@ -1,0 +1,157 @@
+.flatpickr-calendar
+  border-radius: 20px
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+  max-width: 275px
+
+  .flatpickr-months
+    padding: 15px 25px
+    display: grid
+    grid-template-columns: 1fr 30px 30px
+    align-items: center
+
+    .flatpickr-prev-month,
+    .flatpickr-next-month
+      position: relative
+      padding: 0
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      width: 24px
+      height: 24px
+
+      svg
+        path
+            fill: rgba(0,0,0,0.6)
+
+      &:hover
+        svg
+          path
+            fill: $green-color
+
+    .flatpickr-month
+      grid-row-start: 1
+      grid-row-end: 2
+      text-align: left
+      display: flex
+      align-items: center
+      justify-content: flex-start
+
+      .flatpickr-current-month
+        display: flex
+        align-items: center
+        padding: 0
+        height: 24px
+        position: relative
+        left: 0
+        width: 100%
+
+        select.flatpickr-monthDropdown-months
+          width: auto
+          text-align: left
+          @include font-params(16px, 600, rgba(0, 0, 0, 0.6))
+          line-height: 24px
+
+        .numInputWrapper
+          width: auto
+
+          input.cur-year
+            width: 65px
+            height: 24px
+            @include font-params(16px, 600, rgba(0, 0, 0, 0.6))
+            line-height: 24px
+
+  .flatpickr-innerContainer
+    padding: 10px
+    padding-top: 0
+    width: 100%
+
+    .flatpickr-rContainer,
+    .flatpickr-days,
+    .dayContainer
+      width: 254px
+      min-width: 254px
+      max-width: 254px
+
+    .flatpickr-weekdaycontainer
+      span
+        @include font-params(12px, 400, rgba(0, 0, 0, 0.6))
+        line-height: 16px
+        letter-spacing: 0.4px
+
+    .dayContainer
+      display: grid
+      grid-template-columns: repeat(7, 30px)
+      gap: 4px
+      text-align: center
+
+      .flatpickr-day
+        border: 1px solid transparent
+        -webkit-flex-basis: 32px
+        width: 32px !important
+        height: 32px
+        @include font-params(14px, 400, rgba(0, 0, 0, 0.6))
+        line-height: 32px
+        position: relative
+        box-shadow: none !important
+
+        &.prevMonthDay,
+        &.nextMonthDay
+          opacity: .5
+
+        &.selected
+          background: $mainFontColor !important
+          color: $white-color
+          border: 1px solid $mainFontColor
+
+        &.today
+          border: 1px solid rgba(0,0,0,.8)
+          background: transparent
+
+        &.startRange,
+        &.endRange
+          background: $mainFontColor !important
+          color: $white-color
+          border-radius: 100%
+
+        &.startRange
+          &:after
+            position: absolute
+            content: ""
+            left: 50%
+            top: -1px
+            bottom: -1px
+            z-index: -1
+            background: $mainFontColor
+            opacity: .25
+            width: 15px
+
+        &.inRange:not(.startRange):not(.endRange)
+          background: transparent
+          box-shadow: none
+
+          &:before
+            position: absolute
+            content: ""
+            top: -1px
+            bottom: -1px
+            width: 37px
+            left: -6px
+            background: $mainFontColor
+            opacity: .25
+
+        &.endRange
+          &:before
+            position: absolute
+            content: ""
+            right: 50%
+            top: -1px
+            bottom: -1px
+            z-index: -1
+            background: $mainFontColor
+            opacity: .25
+            width: 20px
+
+        &.selected.startRange.endRange
+          &:after,
+          &:before
+            display: none

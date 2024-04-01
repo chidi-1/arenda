@@ -1,0 +1,145 @@
+extends /views/layouts/layout.pug
+
+block content
+    .container
+        .typography-container
+            h2 typography
+
+            h1 Заголовок h1
+            h2 Заголовок h2
+
+            .button-group
+                a(href='').button Ссылка
+                button.button Кнопка
+
+            .button-group
+                a(href='').button.sm Маленькая ссылка
+                button.button.sm Маленькая кнопка
+
+            ul.breadcrumbs
+                li
+                    a Главная
+                li
+                    span Каталог
+
+        .typography-container
+            h2 icons
+
+            ul.icons-list
+                li
+                    span icon-locaition
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-locaition')
+                li
+                    span icon-whatsapp
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-whatsapp')
+                li
+                    span icon-cart
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-cart')
+                li
+                    span icon-warehouse
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-warehouse')
+                li
+                    span icon-delivery
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-delivery')
+                li
+                    span icon-discount
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-discount')
+                li
+                    span icon-yandex
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-yandex')
+                li
+                    span icon-quality
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-quality')
+                li
+                    span icon-label
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-label')
+                li
+                    span icon-users
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-users')
+                li
+                    span icon-vk
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-vk')
+                li
+                    span icon-whatsapp-dark
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-whatsapp-dark')
+                li
+                    span icon-arrow-button
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-arrow-button')
+                li
+                    span angle-down
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#angle-down')
+                li
+                    span icon-trash
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-trash')
+                li
+                    span icon-checkbox
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-checkbox')
+                li
+                    span icon-calendar
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-calendar')
+                li
+                    span icon-tabler
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-tabler')
+                li
+                    span icon-cell
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-cell')
+                li
+                    span icon-card
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-card')
+                li
+                    span icon-cash
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-cash')
+
+        .typography-container
+            h2 Components
+
+            p.fs-20.mb-20 Accordeon
+
+            .accordeon.mb-20
+                .accordeon__el
+                    .accordeon__title.js--toggle-accordeon
+                        span Можно&nbsp;ли приехать в&nbsp;офис без оформления заказа на&nbsp;ареду палаток?
+                    .accordeon__content
+                        .height-overflow
+                            p Будем рады видеть вас в&nbsp;нашем офисе. Предупредите заранее о&nbsp;своем приезде. Но&nbsp;учтите, что в&nbsp;сезон большая часть снаряжения забронирована, а&nbsp;значит мы&nbsp;не&nbsp;сможем вам гарантировать наличие вещей.
+
+
+            p.fs-20.mb-20 Calendar
+            .mb-20
+                .calendar-inline
+            p.fs-20.mb-20 Calendar Range
+            .mb-20
+                .calendar-inline.range
+
+        .typography-container.bg-beige
+            p.fs-20.mb-20 products
+            include ../views/components/product.pug
+
+        .typography-container.bg-beige
+            p.fs-20.mb-20 cart
+            include ../views/components/purchase.pug
+
+        .typography-container
+            p.fs-20.mb-20 category
+            include ../views/components/category.pug

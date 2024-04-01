@@ -1,0 +1,80 @@
+extends /views/layouts/layout.pug
+
+block content
+    .container
+        ul.breadcrumbs
+            li
+                a Главная
+            li
+                span Цены
+
+        .page-header
+            h2.h2 Условия проката
+
+        .steps
+            .row.row-2
+                .step__el
+                    p.title
+                        span.number 1.
+                        =" "
+                        ="Выдача снаряжения производится только после уплаты залога, указанную в договоре аренды."
+                .step__el
+                    p.title
+                        span.number 2.
+                        =" "
+                        ="День выдачи и возврата считается одним днем."
+                .step__el
+                    p.title
+                        span.number 3.
+                        =" "
+                        ="При выдаче снаряжение составляется акт приема-передачи, в котором должны быть зафиксированы существующие дефекты."
+                .step__el
+                    p.title
+                        span.number 4.
+                        =" "
+                        ="В случае возврата снаряжения с дефектами, мы удержим стоимость ремонта из залога, но не более суммы залога за вещь. Таблица стоимости ремонта внизу страницы."
+                .step__el.full
+                    p.title
+                        span.number 5.
+                        =" "
+                        ="При возврате снаряжения мы проверяем каждую единицу в соответствии с актом приема-передачи"
+        section
+            h3.h3 Таблица стоимости устранения дефектов (от 26.06.2023)
+
+            article
+                table.table-header.table-rental
+                    thead
+                        tr
+                            th Наименование
+                            th Цена аренды, руб./сутки
+
+                table.table-rental
+                    thead
+                        tr
+                            th.c-green Палатки, тенты, шатры
+                            th
+
+                    tbody
+                        tr
+                            td Палатка трехместная
+                            td  2960
+                        tr
+                            td Палатка трехместная
+                            td  2960
+
+                table.table-rental
+                    thead
+                        tr
+                            th.c-green Спальные мешки
+                            th
+
+                    tbody
+                        tr
+                            td Палатка трехместная
+                            td  2960
+                        tr
+                            td Палатка трехместная
+                            td  2960
+
+        include ../views/components/contacts
+        include ../views/components/feedback

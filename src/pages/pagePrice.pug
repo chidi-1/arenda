@@ -1,0 +1,61 @@
+extends /views/layouts/layout.pug
+
+block content
+    .container
+        ul.breadcrumbs
+            li
+                a Главная
+            li
+                span Цены
+
+        .page-header
+            h1.h2 Цены
+
+        .vg-40
+            .infoblock
+                p Таблица с&nbsp;ценами на&nbsp;прокат снаряжения, представленного у&nbsp;нас.
+
+            article
+                table.table-header.table-price
+                    thead
+                        tr
+                            th Наименование
+                            th Цена аренды, руб./сутки
+                            th Залог
+
+                table.table-price
+                    thead
+                        tr
+                            th Палатки
+                            th
+                            th
+
+                    tbody
+                        tr
+                            td Палатка трехместная
+                            td  2960
+                            td 290
+                        tr
+                            td Палатка трехместная
+                            td  2960
+                            td 290
+
+                table.table-price
+                    thead
+                        tr
+                            th Спальные мешки
+                            th
+                            th
+
+                    tbody
+                        tr
+                            td Палатка трехместная
+                            td  2960
+                            td 290
+                        tr
+                            td Палатка трехместная
+                            td  2960
+                            td 290
+
+        include ../views/components/contacts
+        include ../views/components/feedback

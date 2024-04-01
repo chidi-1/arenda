@@ -1,0 +1,29 @@
+extends /views/layouts/layout.pug
+
+block content
+    .container
+        ul.breadcrumbs
+            li
+                a Главная
+            li
+                span Цены
+
+        .page-header
+            h1.h2 Цены
+
+        .vg-20
+            .infoblock Предлагаем специальные условия для наших клиентов, которые помогут сделать отдых на&nbsp;природе более доступным.
+
+            article.border.sm
+                h4 Cезон 2021 - 2022
+                p 1. Поделитесь страницей в&nbsp;социальных сетях в&nbsp;начале аренды. При возврате залога мы&nbsp;проверим наличие записи и&nbsp;сделаем скидку&nbsp;5%.
+                p 2. При завершении аренды вы&nbsp;можете оставить отзыв о&nbsp;нас на&nbsp;Яндексе, послать нам в&nbsp;воцап или на&nbsp;почту скриншот. Мы&nbsp;сделаем скидку&nbsp;5%.
+
+            .infoblock Скидки суммируются. Максимальная скидка&nbsp;&mdash; 10&nbsp;%, но&nbsp;не&nbsp;более 1000&nbsp;руб.
+
+            article.border.sm
+                h4 Cезон 2020
+                p Вы можете самостоятельно забрать снаряжение с нашего склада со скидкой 5%. Предварительно звоните!
+
+        include ../views/components/contacts
+        include ../views/components/feedback

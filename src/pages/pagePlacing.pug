@@ -1,0 +1,139 @@
+extends /views/layouts/layout.pug
+
+block content
+    .container
+        ul.breadcrumbs
+            li
+                a Главная
+            li
+                a(href='') Каталог
+            li
+                a(href='') Палатка
+            li
+                a(href='') Палатка двухместная Dallas 2
+            li
+                a(href='') Корзина
+            li
+                span Оформление товара
+
+        .page-header
+            h2.h2 Оформление заказа
+
+        form(action='' method='')
+            .row.row-2
+                .order
+                    .composition
+                        h3.h3 Состав заказа
+
+                        .purchases
+                            +purchasesm('Палатка двухместная Dallas 2', '/public/img/img--product', 'jpg', true, false, '1 798 ₽', false)
+                            +purchasesm('Палатка двухместная Dallas 2', '/public/img/img--product', 'jpg', false, true, '1 798 ₽/сутки', '1000 ₽')
+
+                    .order-params
+                        .order-params__el.date
+                            svg
+                                use(xlink:href='/public/img/sprite.svg#icon-calendar')
+                            span.date__value С 21.03 по 23.03
+
+                        .order-params__el.total
+                            span.total Итого:
+
+                            .total__data
+                                .total__data__header
+                                    span.old-price 5 230 ₽
+                                    span.day-dicount 7 дней - 20%
+                                h3.h3.price 2 900 ₽
+                                span.deposit Залог 10000₽
+
+                    a(href='').button.button-brown-border Изменить заказ
+
+                .placing
+                    .placing__step
+                        .placing__number
+                            span 1
+                        .placing__step__content
+                            h3.h3 Данные покупателя
+
+                            .mw-340
+                                .infoblock
+                                    svg
+                                        use(xlink:href='/public/img/sprite.svg#icon-user')
+                                    span Заполните форму и&nbsp;мы&nbsp;свяжемся с&nbsp;вами для оформления заказа
+
+                                input(type='text' placeholder='ФИО').input
+                                input(type='text' placeholder='Телефон').input
+
+                    .placing__step
+                        .placing__number
+                            span 2
+                        .placing__step__content
+                            h3.h3 Способ доставки
+
+                            .delivery
+                                label.label-checkbox
+                                    input(type='radio' checked name='del')
+                                    .variant
+                                        .variant__title
+                                            svg
+                                                use(xlink:href='/public/img/sprite.svg#icon-delivery')
+                                            span Доставка
+                                        .variant__text
+                                            p Осуществляем срочную доставку заказов в день обращения от 300 руб.
+
+                                label.label-checkbox
+                                    input(type='radio' name='del')
+                                    .variant
+                                        .variant__title
+                                            svg
+                                                use(xlink:href='/public/img/sprite.svg#icon-locaition')
+                                            span Самовывоз
+                                        .variant__text
+                                            p Офис: Полбина, 3 ст3, 109388, Москва
+
+                            .mw-340
+                                .infoblock
+                                    svg
+                                        use(xlink:href='/public/img/sprite.svg#icon-tabler')
+                                    span Укажите адрес доставки для расчёта стоимости заказа
+
+                                input(type='text' placeholder='Адрес').input
+
+                    .placing__step
+                        .placing__number
+                            span 3
+                        .placing__step__content
+                            h3.h3 Способ доставки
+
+                            .mw-495
+                                .infoblock
+                                    svg
+                                        use(xlink:href='/public/img/sprite.svg#icon-cell')
+                                    span После оформления товара с&nbsp;вами свяжется менеджер для уточнения наличия и&nbsp;условий оплаты.
+
+                                .payment
+                                    label.label-checkbox
+                                        input(type='radio' checked name='payment')
+                                        .payment-type
+                                            svg
+                                                use(xlink:href='/public/img/sprite.svg#icon-card')
+                                            span Картой
+                                    label.label-checkbox
+                                        input(type='radio' name='payment')
+                                        .payment-type
+                                            svg
+                                                use(xlink:href='/public/img/sprite.svg#icon-cash')
+                                            span Наличные
+                                    label.label-checkbox
+                                        input(type='radio' name='payment')
+                                        .payment-type
+                                            span СБП
+
+                            .placing__buttons
+                                button.button.button-brown-border Оформить заказ
+                                a(href='').whatsapp
+                                    svg
+                                        use(xlink:href='/public/img/sprite.svg#icon-whatsapp')
+
+        include ../views/components/steps
+        include ../views/components/contacts
+        include ../views/components/feedback

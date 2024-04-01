@@ -1,0 +1,41 @@
+extends /views/layouts/layout.pug
+
+block content
+    .container
+        ul.breadcrumbs
+            li
+                a Главная
+            li
+                span Каталог
+
+        .section-category
+            h2.h2 Туристическое снаряжение
+
+            .categories
+                +category('/public/img/img--category-1', 'jpg', 'Палатки', '9 видов')
+                +category('/public/img/img--category-2', 'jpg', 'Спальники', '5 видов')
+                +category('/public/img/img--category-3', 'jpg', 'Рюкзаки', '5 видов')
+                +category('/public/img/img--category-4', 'jpg', 'Кемпинговая мебель', '6 видов')
+                +category('/public/img/img--category-5', 'jpg', 'Костровое оборудование', '5 видов')
+                +category('/public/img/img--category-6', 'jpg', 'Газовое  оборудование', '4 вида')
+                +category('/public/img/img--category-7', 'jpg', 'Байдарки', '3 видов')
+                +category('/public/img/img--category-8', 'jpg', 'Лодки   с мотором', '4 вида')
+                +category('/public/img/img--category-9', 'jpg', 'Сапборды', '2 вида')
+                +category('/public/img/img--category-10', 'jpg', 'Эндуро  мотоциклы', '2 вида')
+                +category('/public/img/img--category-11', 'jpg', 'Легковые   прицепы', '2 вида')
+
+        .section-category
+            h2.h2 Кемпинговое снаряжение
+
+            .categories
+                +category('/public/img/img--category-4', 'jpg', 'Кемпинговая мебель', '6 видов')
+                +category('/public/img/img--category-5', 'jpg', 'Костровое оборудование', '5 видов')
+                +category('/public/img/img--category-6', 'jpg', 'Газовое  оборудование', '4 вида')
+
+        .section-category
+            h2.h2 Снаряжение для сплава
+
+            .categories
+                +category('/public/img/img--category-7', 'jpg', 'Байдарки', '3 видов')
+                +category('/public/img/img--category-8', 'jpg', 'Лодки   с мотором', '4 вида')
+                +category('/public/img/img--category-9', 'jpg', 'Сапборды', '2 вида')

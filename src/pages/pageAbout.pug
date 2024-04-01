@@ -1,0 +1,73 @@
+extends /views/layouts/layout.pug
+
+block content
+    .container
+        ul.breadcrumbs
+            li
+                a Главная
+            li
+                span О нас
+
+        .about.mb-90
+            .row.row-2.about__el
+                .about__content
+                    h1.h2 О нас
+
+                    p
+                        span.c-green Цель нашей компании
+                        = " "
+                        = " - помочь комфортно провести время на природе, будь то фестиваль, кемпинг или поездка за город. Всем известно, что качественное снаряжение - незаменимый спутник вдали от дома. Мы подобрали достойные варианты снаряжения для различных ситуаций. Для фестивалей и кемпинга всегда сможем предложить недорогие варианты туристических палаток, кострового снаряжения и спальных мешков. Для более сложных и длительных путешествий вы можете взять в аренду туристические рюкзаки, газовые горелки и фонари, теплые спальные мешки и треккинговые палатки."
+
+                .about__img.image
+                    picture
+                        source(type='image/webp' srcset='/public/img/img--about-1.webp 1x, /public/img/img--about-1@2x.webp 2x')
+                        source(type='image/jpg' srcset='/public/img/img--about-1.jpg 1x, /public/img/img--about-1@2x.jpg 2x')
+                        img(srcset='/public/img/img--about-1.jpg 1x, /public/img/img--about-1@2x.jpg 2x' alt='О нас Палатка')
+
+            .row.row-2.about__el
+                .about__content
+                    h3.h3 У&nbsp;нас большой туристический опыт
+
+                    p Занимаемся активным туризмом
+                        = " "
+                        span.c-green более 13 лет
+                        = ". Весь накопленный опыт и знания в сфере походов, кемпинга и организации путешествий мы использовали, чтобы сделать удобный пункт проката снаряжения в Москве. Туристическое снаряжение в прокат может взять любой желающий, предварительно оставив залог. Мы заботимся о каждой вещи: сушим, моем, стираем и ремонтируем. Вы можете быть уверены, что проблемы со снаряжением не застанут врасплох в самый неподходящий момент."
+
+                .about__img.image
+                    picture
+                        source(type='image/webp' srcset='/public/img/img--about-2.webp 1x, /public/img/img--about-2@2x.webp 2x')
+                        source(type='image/jpg' srcset='/public/img/img--about-2.jpg 1x, /public/img/img--about-2@2x.jpg 2x')
+                        img(srcset='/public/img/img--about-2.jpg 1x, /public/img/img--about-2@2x.jpg 2x' alt='О нас Палатка')
+
+
+            .row.row-2.about__el
+                .about__content
+                    h3.h3 Сотрудничаем с&nbsp;юридическими лицами
+
+                    p Мы успешно закрыли кейсы по
+                        = " "
+                        span.c-green организации палаточных лагерей
+                        = " "
+                        = "для фестивалей, выездов школы йоги, а также"
+                        = " "
+                        span.c-green организации корпоративов
+                        = " "
+                        = "на открытом воздухе. Помимо предоставления снаряжения в аренду мы занимаемся организаций праздников на природе в формате кемпинга с элементами активных развлечений, таких как: веревочные курсы, полосы препятствий, стрельба из лука, квесты с ориентированием для детей и взрослых. Для юридических лиц предоставляются особые условия, нацеленные на долгое и продуктивное сотрудничество."
+
+                .about__img.image
+                    picture
+                        source(type='image/webp' srcset='/public/img/img--about-3.webp 1x, /public/img/img--about-3@2x.webp 2x')
+                        source(type='image/jpg' srcset='/public/img/img--about-3.jpg 1x, /public/img/img--about-3@2x.jpg 2x')
+                        img(srcset='/public/img/img--about-3.jpg 1x, /public/img/img--about-3@2x.jpg 2x' alt='О нас Палатка')
+
+        .about-social
+            h3.h3 Следи за&nbsp;нами в&nbsp;социальных сетях
+            .social
+                a(href='').social__link
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-vk')
+
+
+        include ../views/components/steps
+        include ../views/components/contacts
+        include ../views/components/feedback

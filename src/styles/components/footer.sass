@@ -1,0 +1,212 @@
+.footer
+  display: block
+  width: 100%
+  background: $beige-color
+  padding: 4rem 0 4.5rem
+  font-weight: 600
+  position: relative
+  z-index: 50
+
+  .container
+    position: relative
+    @include flex-justify-horiz
+    align-items: flex-start
+    gap: 5rem
+
+  &__links
+    max-width: calc(100% - 35rem)
+    @include grid(4, 4.5rem, 0)
+    padding-top: 3rem
+
+    @include tablet
+      @include grid(2, 4.5rem, 6rem)
+    @include mobile
+      max-width: 100%
+      width: 100%
+      @include grid(1, 0, 10px)
+      padding-bottom: 40px
+      padding-top: 0
+
+
+  span.title
+    display: block
+    @include font-params(2.5rem, 600, $blackFontColor)
+    margin-bottom: 3rem
+
+    @include mobile
+      font-size: 2.2rem
+
+  &__copyright
+    position: absolute
+    left: 20px
+    bottom: 0
+    color: $mainFontColor
+
+    @include mobile
+      font-size: 2.2rem
+
+  .top
+    position: absolute
+    right: 20px
+    bottom: 0
+    background: transparent
+    padding: 0
+
+    svg
+      width: 4.8rem
+      height: 4.8rem
+
+  &__column
+    @include mobile
+      background: $white-color
+      padding: 24px 20px
+      @include border(1px, 30px)
+
+    &.open
+      border-color: transparent
+
+      span.title:after
+        @include mobile
+          transform:  translateY(-50%) rotate(180deg)
+
+      .footer__nav
+        .nav
+            max-height: 400px
+            padding-top: 20px
+            @include mobile
+              padding-top: 24px
+
+    &:first-child
+      padding-bottom: 20px
+
+      @include tablet
+        padding-bottom: 0
+      @include mobile
+        margin-bottom: 10px
+        padding: 0
+        background: transparent
+        border: none
+
+    &:nth-child(3)
+      @include tablet
+        padding-bottom: 20px
+
+    span.title
+      min-height: 6rem
+
+      @include mobile
+        min-height: 1rem
+        margin-bottom: 0
+        position: relative
+        cursor: pointer
+
+      &:after
+        @include mobile
+          @include animate
+          position: absolute
+          content: ""
+          width: 24px
+          height: 24px
+          background: url("/public/img/sprite.svg#angle-do-view")
+          top: 50%
+          right: 0
+          transform: translateY(-50%)
+
+  &__nav
+    @include mobile
+      overflow: hidden
+
+    .nav
+      display: flex
+      flex-direction: column
+      gap: 1rem
+
+      @include mobile
+        @include animate
+        max-height: 0
+        padding-top: 0
+        gap: 1.6rem
+
+      &__el
+        display: block
+        padding-left: 2.5rem
+        position: relative
+
+        &:before
+          position: absolute
+          content: ""
+          width: 5px
+          height: 5px
+          border-radius: 100%
+          background: $blackFontColor
+          left: 1.25rem
+          top: 1rem
+          transform: translateY(-50%)
+
+          @include mobile
+            width: 3px
+            height: 3px
+
+      &__link
+        color: $gray-color
+
+        @include mobile
+          font-size: 1.8rem
+
+  &__logo
+    width: 14rem
+    max-width: 100%
+    margin-bottom: 2rem
+
+    @include mobile
+      width: 20rem
+      margin-bottom: 3rem
+
+  &__about
+    color: $mainFontColor
+
+    @include mobile
+      font-size: 1.8rem
+
+  &__contacts
+    display: flex
+    flex-direction: column
+    gap: 3rem
+    width: 30rem
+    padding: 3rem
+    background: $white-color
+    border-radius: 4.8rem
+
+    @include mobile
+      display: none
+
+    span.title
+      margin-bottom: 0
+
+    .contacts
+      display: flex
+      flex-direction: column
+      gap: 1rem
+      padding: 0
+
+      &__el
+        display: block
+        @include font-params(1.6rem, 600, $gray-color)
+
+        a
+          width: auto
+          @include font-params(1.6rem, 600, $gray-color)
+
+    .social
+      @include flex-center-vert
+
+      &__el
+        svg
+          color: $mainFontColor
+          width: 4.8rem
+          height: 4.8rem
+
+        &.vk
+          svg
+            width: 4rem
+            height: 4rem

@@ -1,0 +1,53 @@
+.get
+  margin-bottom: 2rem
+
+  &__el
+    @include flex-column
+    gap: 3rem
+    @include beige-block(3rem, 3rem)
+
+    .contacts__blocksdfsdf
+      padding: 0
+
+    .contacts__block
+      padding: 0
+
+      .contacts__el
+        *
+          font-size: 2.5rem
+          @include mobile
+            font-size: 2rem
+
+          &:first-child
+            width: 14rem
+          &:last-child
+            width: calc(100% - 14rem)
+
+  &__header
+    @include flex-justify-horiz
+
+    @include mobile
+      gap: 1.5rem
+
+    .title
+      @include flex-center-vert
+      gap: 1rem
+
+      svg
+        width: 3.6rem
+        height: 3.6rem
+
+      .h3
+        color: $blackFontColor
+        margin: 0
+
+  span.get__price
+    @include font-params(2rem, 600, $gray-color)
+
+  &__text
+    @include flex-column
+    gap: 3rem
+    @include font-params(2.5rem, 600, $gray-color)
+
+    @include mobile
+      font-size: 2rem

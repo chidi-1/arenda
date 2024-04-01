@@ -1,0 +1,23 @@
+extends /views/layouts/layout.pug
+
+block content
+    .container
+        ul.breadcrumbs
+            li
+                a Главная
+            li
+                span Партнеры
+
+        .page-header
+            h1.h2 Партнеры
+
+        .vg-30
+            .infoblock  Мы&nbsp;публикуем ссылки на&nbsp;страницы наших партнеров. Обращаясь к&nbsp;ним, вы&nbsp;можете быть уверены в&nbsp;надежности оказываемых услуг, потому что мы&nbsp;сами ими пользуемся.
+
+            article.border
+                a(href='').block.c-black Сылка на пратнёра
+                a(href='').block.c-black Сылка на пратнёра
+                a(href='').block.c-black Сылка на пратнёра
+
+        include ../views/components/contacts
+        include ../views/components/feedback

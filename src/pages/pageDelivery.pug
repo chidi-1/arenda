@@ -1,0 +1,36 @@
+extends /views/layouts/layout.pug
+
+block content
+    .container
+        ul.breadcrumbs
+            li
+                a Главная
+            li
+                span Доставка
+
+        .page-header
+            h1.h2 Доставка
+
+        .vg-20
+            .infoblock После оформления с вами свяжется менеджер
+
+            .row.row-2
+                .variant.variant-border
+                    .variant__title
+                        svg
+                            use(xlink:href='/public/img/sprite.svg#icon-delivery')
+                        span Доставка
+                    .variant__text
+                        p Осуществляем срочную доставку заказов в день обращения от 300 руб.
+
+                .variant.variant-border
+                    .variant__title
+                        svg
+                            use(xlink:href='/public/img/sprite.svg#icon-locaition')
+                        span Самовывоз
+                    .variant__text
+                        p Офис: Полбина, 3 ст3, 109388, Москва
+
+
+        include ../views/components/contacts
+        include ../views/components/feedback

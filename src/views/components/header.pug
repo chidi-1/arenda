@@ -1,0 +1,58 @@
+header.header
+    .container
+        .header__top
+            .header__location
+                svg(width=24 height=24)
+                    use(xlink:href='/public/img/sprite.svg#icon-locaition')
+
+                span г. Москва, ул. Полбина д.&nbsp;3&nbsp;ст3
+
+            p.header__announcement Очень длинный, безумно длинный, прямо невероятно длинный, по-интерстелларовски длинный текст объявления
+
+            .header__links
+                a(href='') Условия доставки
+                a(href='') График работы
+
+        .header__bottom
+            .header__logo
+                img(src='/public/img/logo.svg' alt='Логотип')
+
+            .header__button-mob
+                a(href='').button.button-sm Каталог
+
+            nav.header__nav
+                button().close.js--close-menu
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-close')
+
+                ul.nav
+                    li.nav__el
+                        span.nav__link Главная
+                    li.nav__el
+                        a(href='').nav__link Условия проката
+                    li.nav__el
+                        a(href='').nav__link Цены
+                    li.nav__el
+                        a(href='').nav__link FAQ
+                    li.nav__el
+                        a(href='').nav__link О&nbsp;нас
+                    li.nav__el
+                        a(href='').nav__link Блог
+                    li.nav__el
+                        a(href='').nav__link Контакты
+
+            .header__icons
+                a(href='')
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-whatsapp')
+                a(href='').header__cart
+                    svg(width=24 height=24)
+                        use(xlink:href='/public/img/sprite.svg#icon-cart')
+                    span.counter 2
+
+                a(href='').button.sm Каталог
+
+                button.header__hamburger.js--open-menu
+                    svg(width=24 height=25)
+                        use(xlink:href='/public/img/sprite.svg#icon-hamburger')
+

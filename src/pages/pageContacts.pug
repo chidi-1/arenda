@@ -1,0 +1,83 @@
+extends /views/layouts/layout.pug
+
+block content
+    .container
+        ul.breadcrumbs
+            li
+                a Главная
+            li
+                span Контакты
+
+        .page-header
+            h1.h2 Контакты
+
+        .vg-40
+            .vg-20
+                .row.row-2
+                    .get__el.vg-40
+                        .contacts__block
+                            .contacts__el
+                                span Телефон
+                                a(href='tel:+74994441257') +7 (499) 444-12-57
+                            .contacts__el
+                                span Email
+                                a(href='mailto:tur-arenda@yandex.ru') tur-arenda@yandex.ru
+                            .contacts__el
+                                span Офис
+                                span Полбина, 3&nbsp;ст3, 109388, Москва
+
+                        .get__price
+                            span.c-gray От&nbsp;станции МЦД D2&nbsp;Люблино&nbsp;&mdash; 3&nbsp;минуты пешком.
+                            br
+                            span.c-gray На&nbsp;машине 10&nbsp;минут от&nbsp;Третьего транспортного кольца.
+
+
+                        a(href='').button.button-brown-border.sm whatsapp
+
+                    .contacts__block
+                        h3.h3 Время работы
+
+                        ul.contacts__time
+                            li
+                                span Понедельник:
+                                span 11:00 - 21:00
+                            li
+                                span Вторник:
+                                span 11:00 - 21:00
+                            li
+                                span Среда:
+                                span 11:00 - 21:00
+                            li
+                                span Четверг:
+                                span 11:00 - 21:00
+                            li
+                                span Пятница:
+                                span 11:00 - 21:00
+
+                        span.c-gray Посещение офиса возможно после согласования с&nbsp;менеджером
+
+                .infoblock
+                    h4.h4.c-black От&nbsp;м. Печатники 3&nbsp;остановки на&nbsp;общественном транспорте или 15&nbsp;минут пешком до&nbsp;остановки МЦД Люблино
+
+            div(id='map').contacts__map.relative
+
+            h4.h4.c-black.text-center Вход со&nbsp;стороны МЦД вход в&nbsp;дверь с&nbsp;железными воротами. После охранника выходите на&nbsp;улицу, слева железная дверь с&nbsp;табличкой &laquo;tur-arenda&raquo;. По&nbsp;лестнице на&nbsp;2&nbsp;этаж, офис &#8470;&nbsp;407. Со&nbsp;стороны&nbsp;ул. Полбина можно зайти в&nbsp;железную дверь слева от&nbsp;кирпичного здания. Далее пройти по&nbsp;диагонали до&nbsp;пункта охраны по&nbsp;правую руку жедезная дверь, офис &#8470;&nbsp;407.
+
+            .row.row-2
+                .image
+                    picture
+                        source(type='image/webp' srcset='/public/img/img--map-1.webp 1x, /public/img/img--map-1@2x.webp 2x')
+                        source(type='image/jpg' srcset='/public/img/img--map-1.jpg 1x, /public/img/img--map-1@2x.jpg 2x')
+                        img(srcset='/public/img/img--map-1.jpg 1x, /public/img/img--map-1@2x.jpg 2x' alt='О нас Палатка')
+
+                .image
+                    picture
+                        source(type='image/webp' srcset='/public/img/img--map-2.webp 1x, /public/img/img--map-2@2x.webp 2x')
+                        source(type='image/jpg' srcset='/public/img/img--map-2.jpg 1x, /public/img/img--map-2@2x.jpg 2x')
+                        img(srcset='/public/img/img--map-2.jpg 1x, /public/img/img--map-2@2x.jpg 2x' alt='О нас Палатка')
+
+        include ../views/components/steps
+        include ../views/components/feedback
+
+    script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>")
+

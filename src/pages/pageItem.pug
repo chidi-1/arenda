@@ -1,0 +1,160 @@
+extends /views/layouts/layout.pug
+
+block content
+    .container
+        ul.breadcrumbs
+            li
+                a Главная
+            li
+                a(href='') Каталог
+            li
+                a(href='') Палатка
+            li
+                span Палатка двухместная Dallas 2
+
+        section.item.mb-60
+            .row.row-2
+                .item__slider
+                    .swiper-main
+                        .swiper-wrapper
+                            .swiper-slide
+                                picture
+                                    source(type='image/webp' srcset='/public/img/img--product.webp 1x, /public/img/img--product@2x.webp 2x')
+                                    source(type='image/jpg' srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x')
+                                    img(srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x' alt='Баннер')
+
+                            .swiper-slide
+                                picture
+                                    source(type='image/webp' srcset='/public/img/img--product.webp 1x, /public/img/img--product@2x.webp 2x')
+                                    source(type='image/jpg' srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x')
+                                    img(srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x' alt='Баннер')
+
+                            .swiper-slide
+                                picture
+                                    source(type='image/webp' srcset='/public/img/img--product.webp 1x, /public/img/img--product@2x.webp 2x')
+                                    source(type='image/jpg' srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x')
+                                    img(srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x' alt='Баннер')
+
+                            .swiper-slide
+                                picture
+                                    source(type='image/webp' srcset='/public/img/img--product.webp 1x, /public/img/img--product@2x.webp 2x')
+                                    source(type='image/jpg' srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x')
+                                    img(srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x' alt='Баннер')
+
+
+                        .swiper-button-prev
+                        .swiper-button-next
+
+                    .swiper-thumbnails-mobile-wrap
+                        .swiper.swiper-thumbnails
+                            .swiper-wrapper
+                                .swiper-slide
+                                    picture
+                                        source(type='image/webp' srcset='/public/img/img--product.webp 1x, /public/img/img--product@2x.webp 2x')
+                                        source(type='image/jpg' srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x')
+                                        img(srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x' alt='Баннер')
+
+                                .swiper-slide
+                                    picture
+                                        source(type='image/webp' srcset='/public/img/img--product.webp 1x, /public/img/img--product@2x.webp 2x')
+                                        source(type='image/jpg' srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x')
+                                        img(srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x' alt='Баннер')
+
+                                .swiper-slide
+                                    picture
+                                        source(type='image/webp' srcset='/public/img/img--product.webp 1x, /public/img/img--product@2x.webp 2x')
+                                        source(type='image/jpg' srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x')
+                                        img(srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x' alt='Баннер')
+
+                                .swiper-slide
+                                    picture
+                                        source(type='image/webp' srcset='/public/img/img--product.webp 1x, /public/img/img--product@2x.webp 2x')
+                                        source(type='image/jpg' srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x')
+                                        img(srcset='/public/img/img--product.jpg 1x, /public/img/img--product@2x.jpg 2x' alt='Баннер')
+
+
+                .item__content
+                    h3.h3 Палатка двухместная Dallas 2
+
+                    .item__data
+                        .item__availabile
+                            span.c-green В наличии
+                        div
+                            svg(width=22 height=22)
+                                use(xlink:href='/public/img/sprite.svg#icon-star')
+                            span 5.0
+                        div
+                            svg(width=22 height=22)
+                                use(xlink:href='/public/img/sprite.svg#icon-comment')
+                            span 12
+
+                    .item__rent
+                        .days
+                            span от 4 дней - 10%
+                            span от 7 дней - 20%
+
+                        h3.h3.c-green 290 ₽/сутки
+
+                        span.deposit Залог 10000₽
+
+                    ul.item__params
+                        li
+                            span.text Водостойкость тента
+                            span.value 2000 мм в. ст
+                        li
+                            span.text Количество слоев
+                            span.value 2
+                        li
+                            span.text Вес
+                            span.value 2.3 кг
+                        li
+                            span.text Материал каркаса
+                            span.value Стеклопластик
+
+                    .item__buttons
+                        button().button.button-brown-border Добавить в корзину
+                        a(href='').whatsapp
+                            svg
+                                use(xlink:href='/public/img/sprite.svg#icon-whatsapp')
+
+        section.item-about.mb-90
+            .row.row-2
+                .item-about__content
+                    h3.h3 Описание
+
+                    .item-about__text
+                        p Двухместная палатка с&nbsp;небольшим тамбуром Jungle Camp Dallas 2&nbsp;отлично подойдет для выездов на&nbsp;природу, рыбалки с&nbsp;ночевкой, походов выходного дня. Это самая бюджетная, не&nbsp;в&nbsp;ущерб техническим характеристикам, модель среди двухслойных палаток.
+                        p Внешний тент с&nbsp;пропиткой&nbsp;PU водостойкостью 2000&nbsp;мм и&nbsp;проклеенные швы надежно защищают от&nbsp;дождя и&nbsp;ветра. Внутренняя палатка выполнена из&nbsp;&laquo;дышащего&raquo; полиэстера, что препятствует оседанию конденсата на&nbsp;стенках спального помещения. Противомоскитная сетка в&nbsp;полный размер двери и&nbsp;вентиляционное окно на&nbsp;задней стенке палатки обеспечивают хорошую вентиляцию и&nbsp;препятствуют проникновению насекомых. Удобный тамбур позволяет разместить рюкзаки и&nbsp;обувь. Палатка легкая в&nbsp;сборке. Для организации пространства внутри палатки предусмотрены карманы для мелочей, крючок для подвешивания фонаря.
+
+                    a(href='').more.c-green Читать далее
+
+                .item-about__video
+                    picture.item-about__img
+                        source(type='image/webp' srcset='/public/img/img--index-tab-1.webp 1x, /public/img/img--index-tab-1@2x.webp 2x')
+                        source(type='image/jpg' srcset='/public/img/img--index-tab-1.jpg 1x, /public/img/img--index-tab-1@2x.jpg 2x')
+                        img(srcset='/public/img/img--index-tab-1.jpg 1x, /public/img/img--index-tab-1@2x.jpg 2x' alt='Баннер')
+
+                    button.play
+                        svg(width=24 height=24)
+                            use(xlink:href='/public/img/sprite.svg#icon-play')
+
+    .bg--beige-noise.mb-90.category-inner
+        .container
+            .section-category
+                h3.h3 Возможно вам понадобится
+
+                .categories.categories-white
+                    +category('/public/img/img--category-1', 'jpg', 'Палатки', '9 видов')
+                    +category('/public/img/img--category-2', 'jpg', 'Спальники', '5 видов')
+                    +category('/public/img/img--category-3', 'jpg', 'Рюкзаки', '5 видов')
+                    +category('/public/img/img--category-4', 'jpg', 'Кемпинговая мебель', '6 видов')
+                    +category('/public/img/img--category-5', 'jpg', 'Костровое оборудование', '5 видов')
+                    +category('/public/img/img--category-6', 'jpg', 'Газовое  оборудование', '4 вида')
+
+    .container
+        include ../views/components/get
+        include ../views/components/contacts-xsm
+        include ../views/components/steps
+        include ../views/components/feedback
+
+    script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>")

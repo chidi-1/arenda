@@ -1,0 +1,67 @@
+.about
+  @include flex-column
+  gap: 4rem
+
+  .h1, .h2, .h3
+    margin: 0
+
+  &__el
+    align-items: center
+
+  &__el:nth-child(even)
+    .about__content
+      grid-column-start: 2
+      grid-column-end: 3
+    .about__img
+      grid-column-start: 1
+      grid-column-end: 2
+      grid-row-start: 1
+
+  &__content
+    @include flex-column
+    gap: 2rem
+
+    *:not(.h2, h3)
+      @include font-params(2rem, 600, $blackFontColor)
+
+
+  &__img
+    max-height: 350px
+    position: relative
+
+    &:before
+      position: absolute
+      content: ""
+      inset: 0
+      background: rgba(0,0,0,0.2)
+      z-index: 5
+
+.about-social
+  padding: 3rem
+  text-align: center
+  @include flex-column
+  gap: 2rem
+  background: url("/public/img/bg--beige-dark.jpg") repeat 0 0
+  border-radius: 48px
+
+  h3
+    color: $blackFontColor
+    margin: 0
+
+  .social
+    @include flex-center-vert
+    gap: 2rem
+    justify-content: center
+
+    &__link
+      &:hover
+        svg
+          color: $green-color
+
+      svg
+        width: 4rem
+        height: 4rem
+        color: $mainFontColor
+        transition: all 0.2s ease-in-out
+
+

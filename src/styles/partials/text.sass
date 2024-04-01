@@ -1,0 +1,125 @@
+h1, h2, h3, h4, h5, h6
+  margin: 0
+
+.h1
+  font-family: $mainFont
+  color: $mainFontColor
+  font-size: 6rem
+  margin-bottom: 5rem
+  font-weight: 700
+
+  @include tablet
+    font-size: 5rem
+  @include mobile
+    font-size: 4.5rem
+
+.h2
+  font-family: $mainFont
+  color: $mainFontColor
+  font-weight: 700
+  font-size: 4.9rem
+  margin: 9rem 0 7rem
+
+  @include tablet
+    font-size: 4rem
+    margin: 7rem 0 5rem
+  @include mobile
+    font-size: 3.3rem
+    margin: 4rem 0 2.5rem
+
+.h3
+  font-family: $mainFont
+  color: $mainFontColor
+  font-size: 3rem
+  font-weight: 600
+  margin: 9rem 0 7rem
+
+  @include mobile
+    font-size: 2.7rem
+    margin: 5rem 0 3rem
+
+.h4
+  font-family: $mainFont
+  color: $green-color
+  font-size: 2.5rem
+  font-weight: 600
+
+  @include mobile
+    font-size: 2rem
+
+.c-black
+  color: $blackFontColor !important
+
+.c-green
+  color: $green-color !important
+
+.c-main
+  color: $mainFontColor !important
+
+.c-gray
+  color: $gray-color !important
+
+.c-red
+  color: $red-color !important
+
+*.fs-10
+  font-size: $fontSize_10
+*.fs-13
+  font-size: $fontSize_13
+*.fs-16
+  font-size: $fontSize_16
+*.fs-20
+  font-size: $fontSize_20
+*.fs-25
+  font-size: $fontSize_25
+  @include mobile
+    font-size: 2.2rem
+*.fs-31
+  font-size: $fontSize_31
+*.fs-39
+  font-size: $fontSize_39
+
+a:not(.button):hover
+  text-decoration: underline
+
+a,
+button
+  cursor: pointer
+
+.breadcrumbs
+  @include flex-center-vert
+  flex-wrap: wrap
+  column-gap: 3.3rem
+  row-gap: 1rem
+  margin-bottom: 3rem
+
+  @include mobile
+    column-gap: 4.3rem
+
+  li
+    &:not(:last-child)
+      position: relative
+
+      &:after
+        position: absolute
+        content: ''
+        width: 1.7rem
+        height: 1px
+        background: $mainFontColor
+        top: 50%
+        right: -2.5rem
+
+    a,
+    span
+      @include font-params(1.4rem, 400)
+      line-height: 1.3
+
+      @include mobile
+        font-size: 1.8rem
+
+.infoblock
+  @include beige-block(3rem, 2.5rem)
+  @include font-params(2rem)
+
+.text-center
+  text-align: center

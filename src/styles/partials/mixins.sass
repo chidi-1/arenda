@@ -1,0 +1,101 @@
+// px to rem
+//@function rem($pixels, $context: $mainFontSize)
+//  @if (unitless($pixels))
+//    $pixels: $pixels * 1px
+//
+//  @if (unitless($context))
+//    $context: $context * 1px
+//
+//  @return $pixels / $context * 1rem
+//
+//
+//@mixin size($width,$height: $width)
+//  width: $width
+//  height: $height
+//
+//
+//@mixin placeholder
+//  ::-webkit-input-placeholder @content
+//  :-moz-placeholder           @content
+//  ::-moz-placeholder          @content
+//  :-ms-input-placeholder      @content
+
+// Flex
+@mixin grid($rows, $hGap, $vGap)
+  display: grid
+  grid-template-columns: repeat($rows, 1fr)
+  grid-column-gap: $hGap
+  grid-row-gap: $vGap
+
+@mixin flex-column
+  display: flex
+  flex-wrap: wrap
+  flex-direction: column
+
+@mixin flex-center
+  display: flex
+  align-items: center
+  justify-content: center
+
+@mixin flex-center-column
+  @include flex-center
+  flex-direction: column
+
+@mixin flex-center-vert
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+
+@mixin flex-center-horiz
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+
+@mixin flex-justify-horiz
+  display: flex
+  flex-wrap: wrap
+  flex-direction: row
+  justify-content: space-between
+
+@mixin flex-justify-vert
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+
+// animation
+@mixin animate
+  transition: all 0.2s ease-in-out
+
+// typography
+@mixin font-params($font-size, $font-weight: normal, $color:normal)
+  font-size: $font-size
+
+  @if $font-weight==normal
+    font-weight: 600
+  @else
+    font-weight: $font-weight
+
+  @if $color==normal
+    color: $mainFontColor
+  @else
+    color: $color
+
+@mixin border($width, $radius, $color:normal)
+  @if $color==normal
+    border: $width solid $mainFontColor
+  @else
+    border: $width solid $color
+
+  border-radius: $radius
+
+// block
+@mixin beige-block($hPadding,$vPadding)
+  background: $beige-color
+  border-radius: 4.8rem
+  padding: $vPadding $hPadding
+
+@mixin white-block($hPadding,$vPadding)
+  background: $white-color
+  border-radius: 4.8rem
+  padding: $vPadding $hPadding

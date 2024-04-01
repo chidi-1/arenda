@@ -1,0 +1,180 @@
+.purchases
+  @include flex-column
+  gap: 2rem
+  position: relative
+
+  &.selected-all
+    .cart__item
+      .label-hidden-wrap
+        display: none
+
+    .purchase
+      width: 100%
+
+  .purchase
+    width: calc(100% - 2.5rem - 1rem)
+    @include flex-justify-horiz
+    @include white-block(2rem, 2rem)
+
+    @include tablet
+      @include flex-column
+      gap: 2.5rem
+
+    @include mobile
+      width: calc(100% - 4rem)
+
+    &.disabled
+      .purchase__img
+        img
+          opacity: 0.4
+
+      .amount
+        pointer-events: none
+
+    &__data
+      @include flex-center-vert
+      gap: 2.8rem
+      max-width: calc(100% - 400px)
+      @include tablet
+        max-width: 100%
+      @include mobile
+        gap: 1.5rem
+
+    &__img
+      @include border(1px, 5px, $beige-color)
+      @include flex-center
+      width: 150px
+      height: 110px
+
+      @include mobile
+        width: 90px
+        height: 80px
+
+      img
+        min-width: 100%
+        min-height: 100%
+        object-fit: contain
+
+    &__info
+      @include flex-column
+      gap: 1.1rem
+
+      @include tablet
+        width: calc(100% - 150px - 3rem)
+      @include mobile
+        width: calc(100% - 90px - 1.5rem)
+
+    &__name
+      @include font-params(2rem, 600, $mainFontColor)
+
+      @include mobile
+        padding-right: 2rem
+
+    &__params
+      @include flex-center-vert
+      gap: 1.1rem
+
+    &__available
+      font-size: 1.4rem
+      font-weight: 600
+
+      @include mobile
+        font-size: 1.8rem
+
+    &__onlybuing
+      @include beige-block(1rem, 0.5rem)
+      @include font-params(1.2rem, 600, $blackFontColor)
+
+      @include mobile
+        font-size: 1.6rem
+
+    &__buttons
+      @include flex-center-vert
+      gap: 4rem
+
+      @include tablet
+        width: 100%
+        justify-content: space-between
+      @include mobile
+        gap: 1rem
+        flex-direction: row-reverse
+
+      .amount
+        @include flex-center-vert
+        gap: 2rem
+        @include mobile
+          gap: 0.1rem
+
+        input
+          width: 8rem
+          height: 5rem
+          text-align: center
+          @include border(1px, 5px, $beige-color)
+          @include font-params(2rem, 600, $grayFontColor)
+
+          @include mobile
+            width: 6rem
+
+        .icon
+          background: transparent
+          border: none
+          width: 2.4rem
+          height: 2.4rem
+          @include flex-center
+          top: 2px
+
+          @include netbook
+            width: 50px
+            height: 50px
+          @include mobile
+            width: 5rem
+            height: 5rem
+
+          svg
+            width: 2.4rem
+            height: 2.4rem
+            color: $mainFontColor
+
+            path
+              stroke: $mainFontColor
+
+    &__cost
+      @include flex-column
+      gap: 0.5rem
+      min-width: 12rem
+
+    &__price
+      display: block
+      text-align: right
+      @include font-params(1.8rem, 600, $green-color)
+
+      @include mobile
+        font-size: 2.2rem
+      @media only screen and (max-width: 420px)
+        font-size: 1.8rem
+
+    &__deposit
+      display: block
+      text-align: right
+      @include font-params(1.4rem, 600, $gray-color)
+
+      @include mobile
+        font-size: 1.8rem
+
+    &__remove
+      margin-right: 2rem
+      background: transparent
+
+      @include mobile
+        position: absolute
+        top: 2.5rem
+        right: 1.5rem
+        margin: 0
+        z-index: 5
+
+      svg
+        width: 2rem
+        height: 2rem
+        color: $mainFontColor
+
+

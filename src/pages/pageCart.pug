@@ -1,0 +1,121 @@
+extends /views/layouts/layout.pug
+
+block content
+    .container
+        ul.breadcrumbs
+            li
+                a Главная
+            li
+                span Цены
+
+        .cart-empty
+            h2.h2 В корзине пока пусто
+            h3.h3 Загляните в&nbsp;каталог, чтобы выбрать товар
+            a(href='').button.button-brown-border Каталог
+
+        form(action='' method='').mb-90
+            .cart
+                .cart__header
+                    h3.h3 Корзина
+                    button(type='button').cart__clear
+                        svg
+                            use(xlink:href='/public/img/sprite.svg#icon-trash')
+
+                .cart__params
+                    input(type='text' placeholder='Промокод').input
+                    label.label-checkbox
+                        input(type='checkbox').js--toggle-all
+                        .psevdocheckbox
+                        span Выбрать все
+
+                .purchases
+                    .cart__item
+                        .label-hidden-wrap
+                            label.label-checkbox
+                                input(type='checkbox').js--toggle-all
+                                .psevdocheckbox
+
+                        +purchase('Палатка двухместная Dallas 2', '/public/img/img--product', 'jpg', true, false, '290 ₽/сутки', false)
+
+                    .cart__item
+                        .label-hidden-wrap
+                            label.label-checkbox
+                                input(type='checkbox').js--toggle-all
+                                .psevdocheckbox
+                        +purchase('Палатка двухместная Dallas 2', '/public/img/img--product', 'jpg', false, true, '1 798 ₽/сутки', '1000 ₽')
+
+            .row.row-2
+                .delivery
+                    h3.h3 Способ доставки
+
+                    .delivery__radio
+                        label.label-checkbox
+                            input(type='radio' checked name='del')
+                            .variant
+                                .variant__title
+                                    svg
+                                        use(xlink:href='/public/img/sprite.svg#icon-delivery')
+                                    span Доставка
+                                .variant__text
+                                    p Осуществляем срочную доставку заказов в день обращения от 300 руб.
+
+                        label.label-checkbox
+                            input(type='radio' name='del')
+                            .variant
+                                .variant__title
+                                    svg
+                                        use(xlink:href='/public/img/sprite.svg#icon-locaition')
+                                    span Самовывоз
+                                .variant__text
+                                    p Офис: Полбина, 3 ст3, 109388, Москва
+
+                .settings
+                    .row.row-2
+                        .date
+                            h3.h3 Выбор дат
+
+                            .date__discount
+                                span от 4 дней - 10%
+                                span от 7 дней - 20%
+
+                            .calendar-inline.range
+
+                        .total
+                            h3.h3 Итог
+
+                            .total__days
+                                span Количество
+                                input(type='text' value='1')
+
+                            .total__data
+                                .total__data__header
+                                    span.old-price 5 230 ₽
+                                    span.day-dicount 7 дней - 20%
+                                h3.h3.price 2 900 ₽
+                                span.deposit Залог 10000₽
+
+                    .settings__buttons
+                        button.button.button-brown-border Перейти к оформлению
+                        a(href='').whatsapp
+                            svg
+                                use(xlink:href='/public/img/sprite.svg#icon-whatsapp')
+
+
+    .bg--beige-noise.mb-90.category-inner
+        .container
+            .section-category
+                h2.h2 Возможно вам понадобится
+
+                .categories.categories-white
+                    +category('/public/img/img--category-1', 'jpg', 'Палатки', '9 видов')
+                    +category('/public/img/img--category-2', 'jpg', 'Спальники', '5 видов')
+                    +category('/public/img/img--category-3', 'jpg', 'Рюкзаки', '5 видов')
+                    +category('/public/img/img--category-4', 'jpg', 'Кемпинговая мебель', '6 видов')
+                    +category('/public/img/img--category-5', 'jpg', 'Костровое оборудование', '5 видов')
+                    +category('/public/img/img--category-6', 'jpg', 'Газовое  оборудование', '4 вида')
+
+
+    .container
+        include ../views/components/steps
+        include ../views/components/contacts
+        include ../views/components/feedback

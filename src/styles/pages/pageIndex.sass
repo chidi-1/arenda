@@ -1,0 +1,363 @@
+.index
+  .h2
+    max-width: 740px
+
+.banner
+  position: relative
+  overflow: hidden
+  border-radius: 4.8rem
+  padding: 10.5rem 9rem 5.5rem
+  margin-bottom: 2rem
+
+  @include tablet
+    padding: 5rem
+  @include mobile
+    padding: 5rem 3rem
+    margin-bottom: 4rem
+
+  &__img
+    position: absolute
+    z-index: 5
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+
+    &:after
+      position: absolute
+      content: ""
+      z-index: 6
+      left: 0
+      top: 0
+      right: 0
+      bottom: 0
+      background: rgba(0,0,0,.45)
+
+    picture,
+    img
+      min-width: 100%
+      min-height: 100%
+      object-fit: cover
+
+  &__content
+    position: relative
+    z-index: 10
+
+    .h1
+      color: $white-color
+      margin-bottom: 5rem
+      max-width: 890px
+
+      @include mobile
+        margin-bottom: 4rem
+
+    p
+      color: $white-color
+
+      @include mobile
+        font-weight: 500
+
+    .row
+      margin-bottom: 8.5rem
+      grid-template-columns: repeat(2, calc(50% - 2.8rem))
+      gap: 5.5rem
+
+      @include tablet
+        margin-bottom: 5rem
+        gap: 5rem
+      @include mobile
+        gap: 3rem
+
+.infograf
+  @include beige-block(3rem, 3rem)
+
+  .row
+    @include mobile
+      gap: 3rem
+
+  &__el
+    display: flex
+    align-items: center
+    gap: 2rem
+
+    svg
+      width: 4.8rem
+      height: 4.8rem
+      color: $mainFontColor
+
+      @include mobile
+        width: 36px
+        height: 36px
+
+    p
+      @include font-params(2rem, 600)
+
+      @include mobile
+        padding-left: 26px
+        padding-right: 10px
+        font-size: 2.2rem
+
+.vantage
+  @include mobile
+    margin-bottom: 9rem
+
+  .row
+    align-items: stretch
+
+    @include mobile
+      gap: 3rem
+
+  &__icon
+    width: 13rem
+    height: 13rem
+    @include flex-center
+    background: $mainFontColor
+    border: 1rem solid $white-color
+    border-radius: 45%
+    margin: -1rem auto -7rem
+    position: relative
+    z-index: 5
+
+    @include tablet
+      width: 10rem
+      height: 10rem
+
+    @include mobile
+      width: 13rem
+      height: 13rem
+
+    svg
+      width: 6rem
+      height: 6rem
+      color: $white-color
+
+      @include tablet
+        width: 5rem
+        height: 5rem
+      @include mobile
+        width: 6rem
+        height: 6rem
+
+  &__content
+    @include beige-block(3rem, 9rem)
+    padding-bottom: 7rem
+    height: calc(100% - 6rem)
+
+    @include tablet
+      padding: 8rem 3rem 3rem
+      height: auto
+    @include mobile
+      padding: 8.5rem 3rem 5.5rem
+
+    .h3
+      color: $blackFontColor
+      margin: 0 0 3rem
+      min-height: 7.2rem
+
+      @include tablet
+        min-height: 1rem
+      @include mobile
+        margin-bottom: 1.7rem
+
+    p
+      @include font-params(2.5rem, 600, $gray-color)
+      @include mobile
+        font-size: 2.2rem
+
+.hire
+  @include flex-column
+  gap: 2rem
+
+  .row
+    align-items: stretch
+
+    @include tablet
+      display: block
+
+  .tabs__content
+    border-radius: 4.8rem
+    overflow: hidden
+
+    @include tablet
+      margin-bottom: 2rem
+    @include mobile
+      margin-bottom: 3rem
+
+    &.active
+      display: block
+
+      @include mobile
+        max-height: 87vw
+
+    picture,
+    img
+      min-height: 100%
+      min-width: 100%
+      object-fit: cover
+      display: block
+
+  .tabs__caption
+    @include flex-column
+    gap: 1.5rem
+
+    li
+      @include flex-center
+      @include border(2px, 15px, $mainFontColor)
+      padding: 1rem 0
+      min-height: 5.5rem
+      @include font-params(3rem, 600)
+      cursor: pointer
+      @include animate
+      text-align: center
+
+      &.active
+        background: $mainFontColor
+        color: $white-color
+        cursor: default
+
+.contacts
+  position: relative
+  padding: 3.5rem 3rem
+
+  @include tablet
+    padding: 0
+    @include flex-column
+    flex-direction: column-reverse
+
+  &__map
+    position: absolute
+    border-radius: 4.8rem
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    overflow: hidden
+
+    @include tablet
+      position: relative
+      bottom: auto
+      height: 50vw
+    @include mobile
+      height: 70vw
+
+    &.relative
+      position: relative
+      height: 57rem
+      @include mobile
+        height: 70vw
+
+  &__content
+    max-width: 50%
+    position: relative
+    z-index: 10
+    @include flex-column
+    gap: 1rem
+
+    @include tablet
+      margin-bottom: 2rem
+      max-width: 100%
+      gap: 2rem
+
+  &__block
+    @include flex-column
+    justify-content: flex-start
+    gap: 2.5rem
+    @include beige-block(3rem, 3rem)
+
+    @include mobile
+      padding: 4rem 3rem
+      gap: 3rem
+
+    h3.h3
+      margin: 0
+
+  &__el
+    @include flex-center-vert
+    width: 100%
+
+    *:first-child
+      display: inline-block
+      width: 160px
+      @include font-params(3rem, 600)
+
+      @include mobile
+        width: 110px
+        font-size: 2.5rem
+
+    *:last-child
+      display: inline-block
+      width: calc(100% - 180px)
+      @include font-params(2.5rem, 600, $gray-color)
+
+      @include mobile
+        font-size: 2.1rem
+        width: calc(100% - 110px)
+
+  span.notification
+    display: block
+    @include font-params(2rem, 600, $gray-color)
+
+    @include mobile
+      font-size: 2.2rem
+
+  &__time
+    @include flex-column
+    gap: 1rem
+    @include mobile
+      gap: 1.4rem
+
+    li
+      @include flex-center-vert
+
+      span
+        display: inline-block
+        @include font-params(2.5rem, 600, $gray-color)
+
+        @include mobile
+          font-size: 2.5rem
+
+        &:first-child
+          min-width: 180px
+          @include mobile
+            min-width: 150px
+
+.page-header
+  .h2
+    font-family: $mainFont
+    color: $mainFontColor
+    margin: 1rem 0 4rem
+
+  p
+    @include font-params(2.5rem, 600, $gray-color)
+
+    @include mobile
+      font-size: 2.2rem
+
+.steps
+  .step__el
+    @include flex-column
+    gap: 1.5rem
+    color: $blackFontColor
+    @include beige-block(3rem, 3rem)
+
+    .h3
+      margin: 0
+
+    &.full
+      grid-column-start: 1
+      grid-column-end: 3
+
+    p
+      @include font-params(1.6rem, 600, $blackFontColor)
+
+      @include mobile
+        font-size: 1.8rem
+
+      &.title
+        @include font-params(2rem, 600, $blackFontColor)
+
+    .number
+      font: inherit
+      color: $green-color
+
+

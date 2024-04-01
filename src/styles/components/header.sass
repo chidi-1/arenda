@@ -1,0 +1,197 @@
+.header
+  padding: 4rem 0
+  z-index: 20
+
+  &.fixed
+    position: fixed
+    left: 0
+    top: 0
+    right: 0
+    background: rgba(228, 224, 223, 90%)
+    border-radius: 0 0 30px 30px
+
+    .header__top
+      display: none
+
+    .header__button-mob
+      display: inline-block
+
+    & + main
+      padding-top: 90px
+
+  &.open
+    .header__nav
+      transform: translateX(0)
+
+  &__top
+    @include flex-justify-horiz
+    gap: 2rem
+    align-items: center
+    @include beige-block(2rem, 2rem)
+    margin-bottom: 3rem
+    @include font-params(1.6rem, 600, $blackFontColor)
+
+    @include tablet
+      @include flex-justify-vert
+      gap: 1.5rem
+      margin-bottom: 2.5rem
+
+    @include mobile
+      padding: 1rem
+
+  &__location
+    @include flex-center-vert
+    gap: 1rem
+
+  &__announcement
+    max-width: calc(100% - 650px)
+    text-align: center
+
+    @include tablet
+      max-width: 100%
+
+  &__links
+    @include flex-center-horiz
+    gap: 2.5rem
+
+    a
+      color: $blackFontColor
+      position: relative
+
+      @include mobile
+        font-size: 13px
+
+      &:not(:last-child):after
+        position: absolute
+        content: ""
+        width: 2px
+        height: 19px
+        background: $blackFontColor
+        border-radius: 6px
+        top: 45%
+        transform: translateY(-50%)
+        right: -1.25rem
+
+  &__bottom
+    @include flex-justify-horiz
+    @include flex-center-vert
+
+    @include tablet
+      justify-content: space-around
+    @include mobile
+      justify-content: space-between
+
+  &__logo
+    display: inline-block
+    width: 13.9rem
+
+    @include tablet
+      width: 11rem
+    @include mobile
+      width: 13rem
+
+  &__button-mob
+    display: none
+
+    .button
+      @include mobile
+        font-size: 13px
+        min-height: 30px
+        padding: 7px 20px
+        border-radius:  20px
+        min-width: 100px
+
+  &__nav
+    display: inline-block
+
+    @include tablet
+      @include animate
+      position: fixed
+      left: 0
+      top: 0
+      right: 0
+      bottom: 0
+      background: $white-color
+      z-index: 20
+      transform: translateX(110%)
+
+    .close
+      display: none
+
+      @include tablet
+        display: flex
+        position: fixed
+        top: 10px
+        right: 10px
+        background: rgba(0,0,0,0.3)
+        border-radius: 100%
+        width: 30px
+        height: 30px
+        padding: 0
+        @include flex-center
+        cursor: pointer
+
+      svg
+        display: block
+        fill: $white-color
+        transform: translateX(1px)
+
+  .nav
+    @include flex-center-vert
+    gap: 3.8rem
+
+    @include netbook
+      gap: 3rem
+
+    @include tablet
+      height: 100%
+      flex-direction: column
+      justify-content: center
+      @include animate
+
+    a, span
+      display: block
+      font-size: 2rem
+      font-weight: 600
+
+    a
+      color: $blackFontColor
+    span
+      color: $mainFontColor
+
+  &__icons
+    @include flex-center-vert
+    gap: 1rem
+
+    a:hover
+      text-decoration: none
+
+    .button
+      @include tablet
+        display: none
+
+  &__cart
+    position: relative
+
+    .counter
+      position: absolute
+      top: -5px
+      right: 0
+      transform: translateX(50%)
+      height: 16px
+      border-radius: 100%
+      background: $green-color
+      padding: 0 0.1rem
+      min-width: 16px
+      font-size: 14px
+      line-height: 16px
+      color: $white-color
+      z-index: 10
+      text-align: center
+
+  &__hamburger
+    display: none
+    background: transparent
+
+    @include tablet
+      display: inline-block

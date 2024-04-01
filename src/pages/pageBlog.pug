@@ -1,0 +1,64 @@
+extends /views/layouts/layout.pug
+
+block content
+    .container
+        ul.breadcrumbs
+            li
+                a Главная
+            li
+                span Блог
+
+        .page-header
+            h1.h2 Блог
+
+        .row.row-3.mb-40
+            a(href='').news__link
+                .news__img.image
+                    picture
+                        source(type='image/webp' srcset='/public/img/img--about-1.webp 1x, /public/img/img--about-1@2x.webp 2x')
+                        source(type='image/jpg' srcset='/public/img/img--about-1.jpg 1x, /public/img/img--about-1@2x.jpg 2x')
+                        img(srcset='/public/img/img--about-1.jpg 1x, /public/img/img--about-1@2x.jpg 2x' alt='О нас Палатка')
+
+                .news__content
+                    span.news__title  Список вещей в путешествие в Териберку летом
+                    p.news__description список вещей, которые могут пригодиться в Териберке летом...
+            a(href='').news__link
+                .news__img.image
+                    picture
+                        source(type='image/webp' srcset='/public/img/img--about-1.webp 1x, /public/img/img--about-1@2x.webp 2x')
+                        source(type='image/jpg' srcset='/public/img/img--about-1.jpg 1x, /public/img/img--about-1@2x.jpg 2x')
+                        img(srcset='/public/img/img--about-1.jpg 1x, /public/img/img--about-1@2x.jpg 2x' alt='О нас Палатка')
+
+                .news__content
+                    span.news__title  Список вещей в путешествие в Териберку летом
+                    p.news__description список вещей, которые могут пригодиться в Териберке летом...
+            a(href='').news__link
+                .news__img.image
+                    picture
+                        source(type='image/webp' srcset='/public/img/img--about-1.webp 1x, /public/img/img--about-1@2x.webp 2x')
+                        source(type='image/jpg' srcset='/public/img/img--about-1.jpg 1x, /public/img/img--about-1@2x.jpg 2x')
+                        img(srcset='/public/img/img--about-1.jpg 1x, /public/img/img--about-1@2x.jpg 2x' alt='О нас Палатка')
+
+                .news__content
+                    span.news__title  Список вещей в путешествие в Териберку летом
+                    p.news__description список вещей, которые могут пригодиться в Териберке летом...
+            a(href='').news__link
+                .news__img.image
+                    picture
+                        source(type='image/webp' srcset='/public/img/img--about-1.webp 1x, /public/img/img--about-1@2x.webp 2x')
+                        source(type='image/jpg' srcset='/public/img/img--about-1.jpg 1x, /public/img/img--about-1@2x.jpg 2x')
+                        img(srcset='/public/img/img--about-1.jpg 1x, /public/img/img--about-1@2x.jpg 2x' alt='О нас Палатка')
+
+                .news__content
+                    span.news__title  Список вещей в путешествие в Териберку летом
+                    p.news__description список вещей, которые могут пригодиться в Териберке летом...
+
+        .pagination
+            span.current 1
+            a(href='').link 2
+            a(href='').link 3
+            a(href='').points
+                svg
+                    use(xlink:href='/public/img/sprite.svg#icon-points')
+            a(href='').link 11
+            a(href='').link 12

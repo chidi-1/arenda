@@ -1,0 +1,129 @@
+.products
+  @include grid(3, 2rem, 2rem)
+  @include netbook
+    @include grid(2, 2rem, 2rem)
+  @include mobile
+    @include grid(1, 2rem, 2rem)
+
+.product
+  @include white-block(3rem, 3rem)
+
+  &.disabled
+    pointer-events: none
+
+    *
+      opacity: 0.7
+
+  &__img
+    @include flex-center
+    margin-bottom: 2rem
+    overflow: hidden
+    height: 23rem
+    @include mobile
+      height: 29rem
+
+    picture,
+    img
+      object-fit: contain
+
+  &__name
+    display: block
+    @include font-params(2.5rem, 600, $blackFontColor)
+    margin-bottom: 2rem
+    min-height: 6rem
+    @include mobile
+      min-height: 1rem
+      margin-bottom: 2.5rem
+
+  &__params
+    margin-bottom: 4.8rem
+    @include mobile
+      margin-bottom: 6rem
+
+  &__info
+    @include flex-justify-vert
+    gap: 1.4rem
+    @include mobile
+      gap: 2rem
+
+    li
+      display: flex
+      justify-content: space-between
+
+      span
+        display: inline-block
+        @include font-params(2rem, 600, $gray-color)
+
+        &:first-child
+          @include mobile
+            font-size: 2.5rem
+
+        &:last-child
+          @include mobile
+            font-size: 2.2rem
+
+  &__buttons
+    @include flex-justify-horiz
+    align-items: center
+
+    &.added
+      .amount
+        display: inline-flex
+
+      .button.add
+        display: none
+
+    .amount
+      display: none
+      position: relative
+      width: calc(100% - 7rem)
+
+      input
+        width: 100%
+        height: 64px
+        text-align: center
+        padding: 0 7rem
+        background: $mainFontColor
+        color: $white-color
+        @include border(1px, 43px, $mainFontColor)
+
+        @include netbook
+          height: 54px
+
+      .icon
+        position: absolute
+        z-index: 10
+        width: 60px
+        height: 60px
+        border-radius: 100%
+        @include flex-center
+        top: 2px
+
+        &:hover
+          svg
+            color: $green-color
+
+        @include netbook
+          width: 50px
+          height: 50px
+
+        svg
+          width: 36px
+          height: 36px
+
+        &-minus
+          left: 2px
+
+        &-plus
+          right: 2px
+
+    .button.add
+      border-radius: 43px
+      width: calc(100% - 6rem)
+      padding-left: 0
+      padding-right: 0
+
+    .whatsapp
+      svg
+        width: 4.8rem
+        height: 4.8rem

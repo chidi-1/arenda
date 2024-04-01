@@ -1,0 +1,70 @@
+.bg--beige-noise.category-inner
+  padding: 5rem 0
+
+  .section-category
+    h2,
+    h3
+      margin: 0 0 4rem
+
+.categories
+  display: grid
+  grid-template-columns: repeat(6, calc(16.66% - 1.71rem))
+  gap: 2rem
+
+  @include tablet
+    @include grid(3, 2rem, 2rem)
+  @include mobile
+    @include grid(2, 2rem, 2rem)
+
+  &.categories-white
+    .category
+      background: $white-color
+
+  .category
+    @include flex-column
+    gap: 0.5rem
+    @include beige-block(3rem, 3rem)
+    min-height: 245px
+
+    @include netbook
+      padding: 2rem
+      min-height: 225px
+    @include mobile
+      min-height: 200px
+    @include mobile
+      gap: 1rem
+
+    &:hover
+      text-decoration: none
+
+    &__img
+      background: $white-color
+      border-radius: 20px
+      overflow: hidden
+      @include flex-center
+      height: 105px
+
+      picture,
+      img
+        max-height: 100px
+        object-fit: contain
+
+    &__data
+      @include flex-column
+      gap: 0.5rem
+
+    &__type
+      @include font-params(2rem, 600, $mainFontColor)
+
+      @include mobile
+      font-size: 2.5rem
+
+    &__assortment
+      @include font-params(1.4rem, 600, $gray-color)
+
+      @include mobile
+        font-size: 1.8rem
+
+    .section-category:first-child
+      .h2
+        margin-top: 0

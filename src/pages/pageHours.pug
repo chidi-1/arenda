@@ -1,0 +1,71 @@
+extends /views/layouts/layout.pug
+
+block content
+    .container
+        ul.breadcrumbs
+            li
+                a Главная
+            li
+                span График работы
+
+        .page-header
+            h1.h2 График работы
+
+        .vg-20
+            article.border.sm
+                .vg-20
+                    h4.h4 Летний сезон
+                    p С&nbsp;апреля по&nbsp;конец сентября консультируем и&nbsp;принимаем заказы по&nbsp;телефону с&nbsp;11:00 до&nbsp;21:00. Пункт самовывоза открыт для посещения по&nbsp;предварительной договоренности.
+
+                    .row.row-4
+                        ul.work-hours.vg-1
+                            li
+                                span Понедельник:
+                                span 11:00-21:00
+                            li
+                                span Вторник:
+                                span 11:00-21:00
+                            li
+                                span Среда:
+                                span 11:00-21:00
+                            li
+                                span Четверг:
+                                span     11:00-21:00
+                            li
+                                span Пятница:
+                                span     11:00-21:00
+
+                        .vg-20.col-3-4
+                            div.vg-1
+                                p.c-green Май
+                                p 29&nbsp;апр., 30&nbsp;апр., 1&nbsp;мая&nbsp;&mdash; выходные дни. Сдать снаряжение можно 2&nbsp;числа
+                                p 6, 7, 8, 9&nbsp;мая&nbsp;&mdash; выходные дни. Сдать снаряжение можно 10&nbsp;числа.
+
+                            div.vg-1
+                                p.c-green Июнь
+                                p 12&nbsp;июня&nbsp;&mdash; выходной.
+
+            article.border.sm
+                .vg-20
+                    h4.h4 Зимний сезон
+                    p
+                        mark
+                        =" "
+                        ="консультируем и принимаем заказы по телефону с 10:00 до 18:00. Пункт самовывоза открыт только для сотрудников. Осуществляется доставка заказов от 2000 рублей."
+
+                    div.vg-1
+                        p.c-green Новогодние праздники
+                        p 31&nbsp;декабря&nbsp;&mdash; последний рабочий день. Пункт самовывоза закрыт. Осуществялется только курьерская доставка.
+                        p 1&nbsp;&mdash; 3&nbsp;января&nbsp;&mdash; выходные дни.
+                        p 4&nbsp;&mdash; 10&nbsp;января&nbsp;&mdash; укороченные рабочие дни. Только доставка.&nbsp;с&nbsp;10:00 по&nbsp;18:00.
+
+                    div.vg-1
+                        p.c-green Февраль
+                        p 21&nbsp;&mdash; 23&nbsp;февраля&nbsp;&mdash; выходные дни.
+
+                    div.vg-1
+                        p.c-green Март
+                        p 6&nbsp;&mdash; 8&nbsp;марта&nbsp;&mdash; выходные дни.
+
+        include ../views/components/contacts
+        include ../views/components/feedback
