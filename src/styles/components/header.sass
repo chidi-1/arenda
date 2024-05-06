@@ -2,6 +2,12 @@
   padding: 4rem 0
   z-index: 20
 
+  @include tablet
+    position: absolute
+    left: 0
+    top: 0
+    right: 0
+
   &.fixed
     position: fixed
     left: 0
@@ -16,7 +22,7 @@
     .header__button-mob
       display: inline-block
 
-    & + main
+    //& + main
       padding-top: 90px
 
   &.open
